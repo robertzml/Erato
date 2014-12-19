@@ -42,6 +42,20 @@
     <Compile Include="UserBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Erato.Common\Erato.Common.csproj">
+      <Project>{b0097f05-82a9-4978-81d5-48d0657da642}</Project>
+      <Name>Erato.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Erato.Data\Erato.Data.csproj">
+      <Project>{a30db8cc-64a3-4279-8836-1b08a1d7e641}</Project>
+      <Name>Erato.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Erato.Model\Erato.Model.csproj">
+      <Project>{34f64cac-a55e-455e-9df6-18adb1ce47f4}</Project>
+      <Name>Erato.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
