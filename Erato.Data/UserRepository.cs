@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Erato.Business
+namespace Erato.Data
 {
-    public class Class1
+    public class UserRepository
     {
     }
 }
