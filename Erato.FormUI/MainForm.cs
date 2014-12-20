@@ -34,9 +34,22 @@ namespace Erato.FormUI
         #region Control Event
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.labelTime.Text = DateTime.Now.ToString();
+            
         }
         #endregion //Control Event
+
+        #region Blade Spring Event
+        /// <summary>
+        /// 板弹簧添加
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripbladeSpringCreate_Click(object sender, EventArgs e)
+        {
+            BladeSpringCreateForm form = new BladeSpringCreateForm();
+            form.ShowDialog();
+        }
+        #endregion //Blade Spring Event
         #endregion //Event
     }
 }

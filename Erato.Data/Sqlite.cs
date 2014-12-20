@@ -12,7 +12,7 @@ namespace Erato.Data
     /// </summary>
     public class Sqlite : IDisposable
     {
-        #region Attribute
+        #region Field
         /// <summary>
         /// 数据源
         /// </summary>
@@ -37,7 +37,8 @@ namespace Erato.Data
         /// 错误消息
         /// </summary>
         private string errorMessage;
-        #endregion //Attribute
+        #endregion //Field
+
         #region Constructor
         /// <summary>
         /// 连接默认数据库
@@ -89,6 +90,7 @@ namespace Erato.Data
             Dispose(false);
         }
         #endregion //Constructor
+
         #region Function
         /// <summary>
         /// 初始化
@@ -128,6 +130,7 @@ namespace Erato.Data
             this.isOpen = false;
         }
         #endregion //Function
+
         #region Method
         /// <summary>
         /// 添加参数
@@ -267,6 +270,7 @@ namespace Erato.Data
             return obj;
         }
         #endregion //Method
+
         #region Property
         /// <summary>
         /// 错误消息

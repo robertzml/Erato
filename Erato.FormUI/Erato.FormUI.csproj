@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BladeSpringCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BladeSpringCreateForm.Designer.cs">
+      <DependentUpon>BladeSpringCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConstant.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -77,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BladeSpringCreateForm.resx">
+      <DependentUpon>BladeSpringCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="erato.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -122,6 +132,9 @@
       <Project>{34f64cac-a55e-455e-9df6-18adb1ce47f4}</Project>
       <Name>Erato.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" />

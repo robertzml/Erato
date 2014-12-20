@@ -20,5 +20,10 @@ namespace Erato.Model
         /// </summary>     
         [Display(Name = "密码")]
         public string Password { get; set; }
+
+        /// <summary>
+        /// 用户类别
+        /// </summary>
+        public int UserType { get; set; }
     }
 }
