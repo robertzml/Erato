@@ -22,7 +22,7 @@ namespace Erato.FormUI
             if (login.ShowDialog() == DialogResult.OK)
             {
                 User user = login.User;
-                Application.Run(new MainForm());
+                Application.Run(new MainForm(user));
             }
         }
     }
