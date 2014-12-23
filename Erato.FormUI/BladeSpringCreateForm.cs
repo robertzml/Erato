@@ -34,6 +34,12 @@ namespace Erato.FormUI
         #region Event
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (this.textBox1.Text == "")
+            {
+                this.labelMessage.Text = "请输入LOTNO";
+                return;
+            }
+
             BladeSpring data = new BladeSpring();
             data.LotNo = this.textBox1.Text;
             data.MachineType = this.textBox2.Text;
@@ -43,14 +49,9 @@ namespace Erato.FormUI
             data.Count = (int)this.numericUpDown1.Value;
 
             ErrorCode result = this.springBusiness.Create(data);
-            if (result == ErrorCode.Success)
+            if (result != ErrorCode.Success)
             {
-                MessageBox.Show("添加数据成功", FormConstant.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(result.DisplayName(), FormConstant.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.labelErrorMessage.Text = "添加失败，" + result.DisplayName();
             }
         }
         #endregion //Event

@@ -33,9 +33,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonCreate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bladeSpringBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bladeSpringToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripShow = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -46,8 +48,6 @@
             this.toolStripCreate = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bladeSpringBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lotNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.machineTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +57,9 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.bladeSpringToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bladeSpringBindingSource)).BeginInit();
+            this.bladeSpringToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -101,16 +101,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "操作";
             // 
-            // buttonCreate
-            // 
-            this.buttonCreate.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCreate.Location = new System.Drawing.Point(77, 20);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(142, 55);
-            this.buttonCreate.TabIndex = 0;
-            this.buttonCreate.Text = "新建批次";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            // 
             // buttonClose
             // 
             this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -122,6 +112,17 @@
             this.buttonClose.Text = "关 闭";
             this.buttonClose.UseVisualStyleBackColor = true;
             // 
+            // buttonCreate
+            // 
+            this.buttonCreate.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCreate.Location = new System.Drawing.Point(77, 20);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(142, 55);
+            this.buttonCreate.TabIndex = 0;
+            this.buttonCreate.Text = "新建批次";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            // 
             // panel1
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
@@ -132,6 +133,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 511);
             this.panel1.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lotNoDataGridViewTextBoxColumn,
+            this.machineTypeDataGridViewTextBoxColumn,
+            this.clientNameDataGridViewTextBoxColumn,
+            this.timeDataGridViewTextBoxColumn,
+            this.batchDataGridViewTextBoxColumn,
+            this.countDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bladeSpringBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(1023, 486);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // bladeSpringBindingSource
+            // 
+            this.bladeSpringBindingSource.DataSource = typeof(Erato.Model.BladeSpring);
             // 
             // bladeSpringToolStrip
             // 
@@ -224,33 +252,6 @@
             this.toolStripButton3.Size = new System.Drawing.Size(36, 22);
             this.toolStripButton3.Text = "删除";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lotNoDataGridViewTextBoxColumn,
-            this.machineTypeDataGridViewTextBoxColumn,
-            this.clientNameDataGridViewTextBoxColumn,
-            this.timeDataGridViewTextBoxColumn,
-            this.batchDataGridViewTextBoxColumn,
-            this.countDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bladeSpringBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1023, 486);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // bladeSpringBindingSource
-            // 
-            this.bladeSpringBindingSource.DataSource = typeof(Erato.Model.BladeSpring);
-            // 
             // lotNoDataGridViewTextBoxColumn
             // 
             this.lotNoDataGridViewTextBoxColumn.DataPropertyName = "LotNo";
@@ -261,35 +262,35 @@
             // machineTypeDataGridViewTextBoxColumn
             // 
             this.machineTypeDataGridViewTextBoxColumn.DataPropertyName = "MachineType";
-            this.machineTypeDataGridViewTextBoxColumn.HeaderText = "MachineType";
+            this.machineTypeDataGridViewTextBoxColumn.HeaderText = "机种";
             this.machineTypeDataGridViewTextBoxColumn.Name = "machineTypeDataGridViewTextBoxColumn";
             this.machineTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clientNameDataGridViewTextBoxColumn
             // 
             this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "ClientName";
-            this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "客户";
             this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
             this.clientNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // timeDataGridViewTextBoxColumn
             // 
             this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "时间";
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
             this.timeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // batchDataGridViewTextBoxColumn
             // 
             this.batchDataGridViewTextBoxColumn.DataPropertyName = "Batch";
-            this.batchDataGridViewTextBoxColumn.HeaderText = "Batch";
+            this.batchDataGridViewTextBoxColumn.HeaderText = "批次";
             this.batchDataGridViewTextBoxColumn.Name = "batchDataGridViewTextBoxColumn";
             this.batchDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // countDataGridViewTextBoxColumn
             // 
             this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "数量";
             this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
             this.countDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -307,10 +308,10 @@
             this.groupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.bladeSpringToolStrip.ResumeLayout(false);
-            this.bladeSpringToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bladeSpringBindingSource)).EndInit();
+            this.bladeSpringToolStrip.ResumeLayout(false);
+            this.bladeSpringToolStrip.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -334,12 +335,12 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bladeSpringBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn lotNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn machineTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn batchDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bladeSpringBindingSource;
     }
 }

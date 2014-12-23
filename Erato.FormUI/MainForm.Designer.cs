@@ -29,29 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("部材录入");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("板弹簧工序");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("洗净干燥工序");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("磁轭工序");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("ACT组立工序");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("封止工序");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("HEF洗净工序");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("电检工序");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("最终外观工序");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("组立中心", new System.Windows.Forms.TreeNode[] {
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28,
-            treeNode29,
-            treeNode30,
-            treeNode31,
-            treeNode32,
-            treeNode33});
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("追溯查询");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("系统设置");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("部材录入");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("板弹簧工序");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("洗净干燥工序");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("磁轭工序");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("ACT组立工序");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("封止工序");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("HEF洗净工序");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("电检工序");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("最终外观工序");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("组立中心", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("追溯查询");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("系统设置");
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.treeViewMenu = new System.Windows.Forms.TreeView();
@@ -70,8 +71,8 @@
             this.listViewFunction = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,7 +80,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -98,8 +98,19 @@
             this.panel1.Size = new System.Drawing.Size(1008, 64);
             this.panel1.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Erato.FormUI.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1008, 64);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(215)))), ((int)(((byte)(235)))));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 64);
             this.splitContainer1.Name = "splitContainer1";
@@ -137,37 +148,38 @@
             // 
             // treeViewMenu
             // 
+            this.treeViewMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(215)))), ((int)(((byte)(235)))));
             this.treeViewMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeViewMenu.Location = new System.Drawing.Point(3, 103);
             this.treeViewMenu.Name = "treeViewMenu";
-            treeNode25.Name = "节点1";
-            treeNode25.Text = "部材录入";
-            treeNode26.Name = "nodeBladeSpring";
-            treeNode26.Text = "板弹簧工序";
-            treeNode27.Name = "节点6";
-            treeNode27.Text = "洗净干燥工序";
-            treeNode28.Name = "节点7";
-            treeNode28.Text = "磁轭工序";
-            treeNode29.Name = "节点8";
-            treeNode29.Text = "ACT组立工序";
-            treeNode30.Name = "节点9";
-            treeNode30.Text = "封止工序";
-            treeNode31.Name = "节点10";
-            treeNode31.Text = "HEF洗净工序";
-            treeNode32.Name = "节点11";
-            treeNode32.Text = "电检工序";
-            treeNode33.Name = "节点12";
-            treeNode33.Text = "最终外观工序";
-            treeNode34.Name = "节点0";
-            treeNode34.Text = "组立中心";
-            treeNode35.Name = "节点1";
-            treeNode35.Text = "追溯查询";
-            treeNode36.Name = "节点2";
-            treeNode36.Text = "系统设置";
+            treeNode1.Name = "节点1";
+            treeNode1.Text = "部材录入";
+            treeNode2.Name = "nodeBladeSpring";
+            treeNode2.Text = "板弹簧工序";
+            treeNode3.Name = "节点6";
+            treeNode3.Text = "洗净干燥工序";
+            treeNode4.Name = "节点7";
+            treeNode4.Text = "磁轭工序";
+            treeNode5.Name = "节点8";
+            treeNode5.Text = "ACT组立工序";
+            treeNode6.Name = "节点9";
+            treeNode6.Text = "封止工序";
+            treeNode7.Name = "节点10";
+            treeNode7.Text = "HEF洗净工序";
+            treeNode8.Name = "节点11";
+            treeNode8.Text = "电检工序";
+            treeNode9.Name = "节点12";
+            treeNode9.Text = "最终外观工序";
+            treeNode10.Name = "节点0";
+            treeNode10.Text = "组立中心";
+            treeNode11.Name = "节点1";
+            treeNode11.Text = "追溯查询";
+            treeNode12.Name = "节点2";
+            treeNode12.Text = "系统设置";
             this.treeViewMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode34,
-            treeNode35,
-            treeNode36});
+            treeNode10,
+            treeNode11,
+            treeNode12});
             this.treeViewMenu.Size = new System.Drawing.Size(234, 310);
             this.treeViewMenu.TabIndex = 0;
             this.treeViewMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewMenu_AfterSelect);
@@ -185,6 +197,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(215)))), ((int)(((byte)(235)))));
             this.groupBox1.Controls.Add(this.labelUserName);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -245,6 +258,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(215)))), ((int)(((byte)(235)))));
             this.groupBox2.Controls.Add(this.labelTime);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -319,16 +333,6 @@
             this.columnHeader2.Text = "说明";
             this.columnHeader2.Width = 578;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Erato.FormUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1008, 64);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -341,6 +345,7 @@
             this.Text = "ALPS组立工程生产管理监控平台";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -350,7 +355,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

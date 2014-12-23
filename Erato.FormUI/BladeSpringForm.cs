@@ -41,6 +41,14 @@ namespace Erato.FormUI
         {
             LoadBladeSpring();
         }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+            BladeSpringCreateForm form = new BladeSpringCreateForm();
+            form.ShowDialog();
+
+            LoadBladeSpring();
+        }
         #endregion //Event
     }
 }
