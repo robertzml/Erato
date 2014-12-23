@@ -40,15 +40,43 @@ namespace Erato.FormUI
         }
 
         /// <summary>
-        /// 载入板弹簧数据
+        /// 载入功能列表项
         /// </summary>
-        private void LoadBladeSpring()
+        private void LoadListViewItem(string name)
         {
-            BladeSpringBusiness springBusiness = new BladeSpringBusiness();
+            this.listViewFunction.BeginUpdate();
 
-            this.bladeSpringBindingSource.DataSource = springBusiness.Get().ToList();
-            this.bladeSpringBindingSource.ResetBindings(false);
-        }
+            this.listViewFunction.Items.Clear();
+
+            switch (name)
+            {
+                case "nodeBladeSpring":
+                    ListViewItem lvi0 = new ListViewItem();
+                    lvi0.Name = "bladeSpringSeqItem";
+                    lvi0.Text = "工序入口";
+                    lvi0.SubItems.Add("板弹簧工序入口");
+
+                    ListViewItem lvi1 = new ListViewItem();
+                    lvi1.Text = "日盘点";
+                    lvi1.SubItems.Add("日盘点入口");
+
+                    ListViewItem lvi2 = new ListViewItem();
+                    lvi2.Text = "周盘点";
+                    lvi2.SubItems.Add("周盘点入口");
+
+                    ListViewItem lvi3 = new ListViewItem();
+                    lvi3.Text = "月盘点";
+                    lvi3.SubItems.Add("月盘点入口");
+
+                    this.listViewFunction.Items.Add(lvi0);
+                    this.listViewFunction.Items.Add(lvi1);
+                    this.listViewFunction.Items.Add(lvi2);
+                    this.listViewFunction.Items.Add(lvi3);
+                    break;
+            }
+
+            this.listViewFunction.EndUpdate();
+        }       
         #endregion //Function
 
         #region Event
@@ -58,46 +86,46 @@ namespace Erato.FormUI
             InitControls();
         }
         #endregion //Form Event
-
-        #region Menu Event
-        private void menuBladeSpringSeq_Click(object sender, EventArgs e)
-        {
-            LoadBladeSpring();
-            this.tabControl1.SelectedIndex = 1;
-        }
-        #endregion //Menu Event
-
+        
         #region Control Event
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.labelTime.Text = DateTime.Now.ToString();
         }
+
+        /// <summary>
+        /// 树菜单选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void treeViewMenu_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var node = this.treeViewMenu.SelectedNode;
+            if (node == null)
+                return;
+
+            LoadListViewItem(node.Name);
+        }
+
+        /// <summary>
+        /// 列表功能选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listViewFunction_ItemActivate(object sender, EventArgs e)
+        {
+            if (this.listViewFunction.SelectedItems.Count == 0)
+                return;
+
+            var item = this.listViewFunction.SelectedItems[0];
+            if (item.Name == "bladeSpringSeqItem")
+            {
+                BladeSpringForm form = new BladeSpringForm();
+                form.ShowDialog();
+            }           
+        }
+
         #endregion //Control Event
-
-        #region Blade Spring Event
-        /// <summary>
-        /// 板弹簧一览
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void bladeSpringToolStripShow_Click(object sender, EventArgs e)
-        {
-            LoadBladeSpring();
-        }
-
-        /// <summary>
-        /// 板弹簧添加
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripbladeSpringCreate_Click(object sender, EventArgs e)
-        {
-            BladeSpringCreateForm form = new BladeSpringCreateForm();
-            form.ShowDialog();
-
-            LoadBladeSpring();
-        }
-        #endregion //Blade Spring Event
         #endregion //Event
     }
 }
