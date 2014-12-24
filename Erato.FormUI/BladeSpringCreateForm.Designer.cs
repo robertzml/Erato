@@ -65,14 +65,13 @@
             this.label17 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonActive = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -111,9 +110,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Location = new System.Drawing.Point(507, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(498, 228);
+            this.groupBox1.Size = new System.Drawing.Size(498, 236);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "板弹簧信息";
@@ -263,7 +263,7 @@
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSave.Location = new System.Drawing.Point(547, 575);
+            this.buttonSave.Location = new System.Drawing.Point(547, 572);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(114, 36);
             this.buttonSave.TabIndex = 0;
@@ -275,7 +275,7 @@
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(855, 575);
+            this.buttonCancel.Location = new System.Drawing.Point(855, 572);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(114, 36);
             this.buttonCancel.TabIndex = 2;
@@ -291,9 +291,10 @@
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 237);
+            this.groupBox2.Enabled = false;
+            this.groupBox2.Location = new System.Drawing.Point(3, 245);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(498, 114);
+            this.groupBox2.Size = new System.Drawing.Size(498, 144);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "型号";
@@ -335,20 +336,20 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox6, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox6, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 554);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 542);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // groupBox6
@@ -358,24 +359,25 @@
             this.groupBox6.Controls.Add(this.numericUpDown2);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(507, 237);
+            this.groupBox6.Enabled = false;
+            this.groupBox6.Location = new System.Drawing.Point(507, 395);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(498, 114);
+            this.groupBox6.Size = new System.Drawing.Size(498, 144);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "外观";
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(330, 32);
+            this.textBox15.Location = new System.Drawing.Point(95, 80);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(152, 21);
+            this.textBox15.Size = new System.Drawing.Size(272, 21);
             this.textBox15.TabIndex = 1;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(259, 35);
+            this.label18.Location = new System.Drawing.Point(18, 80);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(65, 12);
             this.label18.TabIndex = 20;
@@ -383,14 +385,14 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(89, 33);
+            this.numericUpDown2.Location = new System.Drawing.Point(95, 33);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(152, 21);
+            this.numericUpDown2.Size = new System.Drawing.Size(272, 21);
             this.numericUpDown2.TabIndex = 0;
             // 
             // label20
@@ -408,10 +410,10 @@
             this.groupBox3.Controls.Add(this.listView2);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.textBox14);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(507, 357);
+            this.groupBox3.Enabled = false;
+            this.groupBox3.Location = new System.Drawing.Point(3, 395);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(498, 194);
+            this.groupBox3.Size = new System.Drawing.Size(498, 144);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "下板弹簧";
@@ -419,7 +421,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 80);
+            this.label16.Location = new System.Drawing.Point(18, 71);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(29, 12);
             this.label16.TabIndex = 28;
@@ -427,9 +429,9 @@
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(89, 80);
+            this.listView2.Location = new System.Drawing.Point(89, 71);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(272, 95);
+            this.listView2.Size = new System.Drawing.Size(272, 58);
             this.listView2.TabIndex = 1;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -437,7 +439,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 39);
+            this.label17.Location = new System.Drawing.Point(18, 33);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 12);
             this.label17.TabIndex = 25;
@@ -445,7 +447,7 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(89, 36);
+            this.textBox14.Location = new System.Drawing.Point(89, 32);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(272, 21);
             this.textBox14.TabIndex = 0;
@@ -453,38 +455,38 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.buttonActive);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.textBox11);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.textBox9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(507, 3);
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(498, 228);
+            this.groupBox4.Size = new System.Drawing.Size(498, 236);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "RFID信息";
             // 
-            // button4
+            // buttonActive
             // 
-            this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(388, 166);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 36);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "解锁并初始化";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonActive.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonActive.Location = new System.Drawing.Point(388, 166);
+            this.buttonActive.Name = "buttonActive";
+            this.buttonActive.Size = new System.Drawing.Size(94, 36);
+            this.buttonActive.TabIndex = 6;
+            this.buttonActive.Text = "解锁并初始化";
+            this.buttonActive.UseVisualStyleBackColor = true;
+            this.buttonActive.Click += new System.EventHandler(this.buttonActive_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(388, 117);
+            this.button3.Location = new System.Drawing.Point(388, 94);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 36);
             this.button3.TabIndex = 5;
@@ -494,7 +496,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(388, 69);
+            this.button2.Location = new System.Drawing.Point(388, 26);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 36);
             this.button2.TabIndex = 4;
@@ -534,16 +536,6 @@
             this.textBox10.Size = new System.Drawing.Size(272, 72);
             this.textBox10.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(388, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 36);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "绑定RFID卡";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(89, 26);
@@ -566,10 +558,10 @@
             this.groupBox5.Controls.Add(this.listView1);
             this.groupBox5.Controls.Add(this.textBox13);
             this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 357);
+            this.groupBox5.Enabled = false;
+            this.groupBox5.Location = new System.Drawing.Point(507, 245);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(498, 194);
+            this.groupBox5.Size = new System.Drawing.Size(498, 144);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "线圈";
@@ -577,7 +569,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(18, 80);
+            this.label15.Location = new System.Drawing.Point(18, 78);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 12);
             this.label15.TabIndex = 24;
@@ -585,16 +577,16 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(81, 80);
+            this.listView1.Location = new System.Drawing.Point(95, 75);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(272, 95);
+            this.listView1.Size = new System.Drawing.Size(272, 55);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(81, 36);
+            this.textBox13.Location = new System.Drawing.Point(95, 32);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(272, 21);
             this.textBox13.TabIndex = 0;
@@ -602,7 +594,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(18, 39);
+            this.label14.Location = new System.Drawing.Point(18, 35);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 0;
@@ -611,7 +603,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.Location = new System.Drawing.Point(701, 575);
+            this.button5.Location = new System.Drawing.Point(701, 572);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(114, 36);
             this.button5.TabIndex = 1;
@@ -633,7 +625,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(1008, 622);
+            this.ClientSize = new System.Drawing.Size(1008, 619);
             this.Controls.Add(this.labelErrorMessage);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.buttonCancel);
@@ -694,7 +686,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelMessage;
@@ -709,7 +700,7 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonActive;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox11;

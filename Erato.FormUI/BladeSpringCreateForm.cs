@@ -32,6 +32,15 @@ namespace Erato.FormUI
         #endregion //Constructor
 
         #region Event
+        private void buttonActive_Click(object sender, EventArgs e)
+        {
+            this.groupBox1.Enabled = true;
+            this.groupBox2.Enabled = true;
+            this.groupBox3.Enabled = true;
+            this.groupBox5.Enabled = true;
+            this.groupBox6.Enabled = true;
+        }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (this.textBox1.Text == "")
