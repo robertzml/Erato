@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erato.Data", "Erato.Data\Er
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erato.Common", "Erato.Common\Erato.Common.csproj", "{B0097F05-82A9-4978-81D5-48D0657DA642}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erato.UI", "Erato.UI\Erato.UI.csproj", "{0A8B4D19-04B9-4421-93CF-E6ECDBB0A3C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B0097F05-82A9-4978-81D5-48D0657DA642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0097F05-82A9-4978-81D5-48D0657DA642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0097F05-82A9-4978-81D5-48D0657DA642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8B4D19-04B9-4421-93CF-E6ECDBB0A3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8B4D19-04B9-4421-93CF-E6ECDBB0A3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8B4D19-04B9-4421-93CF-E6ECDBB0A3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8B4D19-04B9-4421-93CF-E6ECDBB0A3C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
