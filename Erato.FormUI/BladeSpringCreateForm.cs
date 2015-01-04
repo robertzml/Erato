@@ -51,11 +51,8 @@ namespace Erato.FormUI
 
             BladeSpring data = new BladeSpring();
             data.LotNo = this.textBox1.Text;
-            data.MachineType = this.textBox2.Text;
-            data.ClientName = this.textBox3.Text;
-            data.Time = DateTime.Now;
-            data.Batch = this.textBox5.Text;
-            data.Count = (int)this.numericUpDown1.Value;
+            data.Type = this.textBox2.Text;
+            data.Custom = this.textBox3.Text;        
 
             ErrorCode result = this.springBusiness.Create(data);
             if (result != ErrorCode.Success)

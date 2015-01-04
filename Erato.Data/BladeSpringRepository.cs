@@ -45,11 +45,8 @@ namespace Erato.Data
             {
                 BladeSpring bs = new BladeSpring();
                 bs.LotNo = row["LotNo"].ToString();
-                bs.MachineType = row["MachineType"].ToString();
-                bs.ClientName = row["ClientName"].ToString();
-                bs.Time = Convert.ToDateTime(row["Time"]);
-                bs.Batch = row["Batch"].ToString();
-                bs.Count = Convert.ToInt32(row["Count"]);
+                bs.Type = row["MachineType"].ToString();
+                bs.Custom = row["ClientName"].ToString();               
 
                 data.Add(bs);
             }
@@ -66,8 +63,8 @@ namespace Erato.Data
         {
             try
             {
-                string sql = string.Format("INSERT INTO BladeSpring(LotNo, MachineType, ClientName, Time, Batch, Count) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', {5})",
-                    data.LotNo, data.MachineType, data.ClientName, data.Time.ToString(), data.Batch, data.Count);
+                string sql = string.Format("INSERT INTO BladeSpring(LotNo, MachineType, ClientName) VALUES('{0}', '{1}', '{2}')",
+                    data.LotNo, data.Type, data.Custom);
 
                 this.sqlite.ExecuteNonQuery(sql);
             }

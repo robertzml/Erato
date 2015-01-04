@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,29 +20,52 @@ namespace Erato.Model
         /// <summary>
         /// 机种
         /// </summary>
-        public string MachineType { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// 客户名
         /// </summary>
-        public string ClientName { get; set; }
+        public string Custom { get; set; }
+
+        [StringLength(1)]
+        public string Products { get; set; }
+
+        /// <summary>
+        /// 线别
+        /// </summary>
+        public string Line { get; set; }
 
         /// <summary>
         /// 日期
         /// </summary>
-        public DateTime Time { get; set; }
+        public string Date { get; set; }
 
-        /// <summary>
-        /// 班别
-        /// </summary>
-        public string Batch { get; set; }
+        public string Shifts { get; set; }
 
-        /// <summary>
-        /// 数量
-        /// </summary>
-        /// <remarks>
-        /// 最大1000
-        /// </remarks>
-        public int Count { get; set; }
+        public string SeqNum { get; set; }
+
+        public string MetalType { get; set; }
+
+        public string Cavity { get; set; }
+
+        public int Total { get; set; }
+
+        public string Coils { get; set; }
+
+        public string DSprings { get; set; }
+
+        public int DefectiveNum { get; set; }
+
+        public int Output { get; set; }
+
+        public string DefRecoder { get; set; }
+
+        public string Stat { get; set; }
+
+        public string CleanOperator { get; set; }
+
+        public DateTime OperationTime { get; set; }
+
+        public string Operator { get; set; }
     }
 }
