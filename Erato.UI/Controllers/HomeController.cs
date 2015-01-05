@@ -8,7 +8,22 @@ namespace Erato.UI.Controllers
 {
     public class HomeController : Controller
     {
+        #region Action
+        /// <summary>
+        /// 主页
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 菜单
+        /// </summary>
+        /// <returns></returns>
+        [ChildActionOnly]
+        public ActionResult Menu()
         {
             return View();
         }
@@ -19,12 +34,6 @@ namespace Erato.UI.Controllers
 
             return View();
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        #endregion //Action
     }
 }

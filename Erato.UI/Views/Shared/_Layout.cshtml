@@ -7,18 +7,23 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8" />
-    <title>Metronic | Page Layouts - Blank Page</title>
+    <title>Metronic | Page Layouts -@ViewBag.Title</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description" />
     <meta content="" name="author" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->  
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN CORE PLUGIN STYLES -->
+    <link rel="stylesheet" type="text/css" href="/assets/global/plugins/select2/select2.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
+    <!-- END CORE PLUGIN STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link href="/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
     <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
@@ -54,85 +59,7 @@
                 </div>
             </div>
             <!-- END LOGO -->
-            <!-- BEGIN HORIZANTAL MENU -->
-            <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
-            <!-- DOC: This is desktop version of the horizontal menu. The mobile version is defined(duplicated) sidebar menu below. So the horizontal menu has 2 seperate versions -->
-            <div class="hor-menu hor-menu-light hidden-sm hidden-xs">
-                <ul class="nav navbar-nav">
-                    <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
-                    <li class="classic-menu-dropdown active">
-                        <a href="/">
-                            主页 <span class="selected">
-                            </span>
-                        </a>
-                    </li>
-                    <li class="classic-menu-dropdown">
-                        <a data-toggle="dropdown" href="javascript:;">
-                            组立中心 <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu pull-left">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-bookmark-o"></i> 部材录入
-                                </a>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a href="javascript:;">
-                                    <i class="fa fa-user"></i> 板弹簧工序
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="/BladeSpring/Index">
-                                            工序入口
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html">
-                                            日盘点
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html">
-                                            周盘点
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html">
-                                            月盘点
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-puzzle-piece"></i> 洗净干燥工序
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-gift"></i> 磁轭工序
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-table"></i> ACT组立工序
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="classic-menu-dropdown">
-                        <a href="#">
-                            追溯查询
-                        </a>
-                    </li>
-                    <li class="classic-menu-dropdown">
-                        <a href="#">
-                            系统设置
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- END HORIZANTAL MENU -->
+            @Html.Action("Menu", "Home")
             <!-- BEGIN HEADER SEARCH BOX -->
             <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
             <form class="search-form" action="extra_search.html" method="GET">
@@ -193,28 +120,6 @@
                                                     <i class="fa fa-bell-o"></i>
                                                 </span>
                                                 Server #2 not responding.
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">14 hrs</span>
-                                            <span class="details">
-                                                <span class="label label-sm label-icon label-info">
-                                                    <i class="fa fa-bullhorn"></i>
-                                                </span>
-                                                Application error.
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">2 days</span>
-                                            <span class="details">
-                                                <span class="label label-sm label-icon label-danger">
-                                                    <i class="fa fa-bolt"></i>
-                                                </span>
-                                                Database overloaded 68%.
                                             </span>
                                         </a>
                                     </li>
@@ -356,14 +261,9 @@
     <![endif]-->
     <script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-    <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-    <script src="/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-    <script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>   
+    @Scripts.Render("~/bundles/core")
+    <script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>
+    @Scripts.Render("~/bundles/datatables")
     <!-- END CORE PLUGINS -->
     <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
     <script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
@@ -373,6 +273,8 @@
             Layout.init(); // init current layout
         });
     </script>
+    <script src="~/Scripts/erato.js" type="text/javascript"></script>
+    @RenderSection("scripts", required: false)
     <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

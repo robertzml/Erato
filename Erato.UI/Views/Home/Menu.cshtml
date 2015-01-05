@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+ <!-- BEGIN HORIZANTAL MENU -->
+<!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+<!-- DOC: This is desktop version of the horizontal menu. The mobile version is defined(duplicated) sidebar menu below. So the horizontal menu has 2 seperate versions -->
+<div class="hor-menu hor-menu-light hidden-sm hidden-xs">
+    <ul class="nav navbar-nav" id="top-nav">
+        <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
+        <li class="classic-menu-dropdown">
+            <a href="/" id="menu-home">
+                主 页
+            </a>
+        </li>
+        <li class="classic-menu-dropdown">
+            <a data-toggle="dropdown" href="javascript:;" id="menu-center">
+                组立中心 <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu pull-left">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bookmark-o"></i> 部材录入
+                    </a>
+                </li>
+                <li class="dropdown-submenu">
+                    <a href="javascript:;">
+                        <i class="fa fa-user"></i> 板弹簧工序
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="@Url.Action("Index", "BladeSpring")">
+                                工序入口
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                日盘点
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                周盘点
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                月盘点
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-puzzle-piece"></i> 洗净干燥工序
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-gift"></i> 磁轭工序
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-table"></i> ACT组立工序
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="classic-menu-dropdown">
+            <a href="#">
+                追溯查询
+            </a>
+        </li>
+        <li class="classic-menu-dropdown">
+            <a href="#">
+                系统设置
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- END HORIZANTAL MENU -->

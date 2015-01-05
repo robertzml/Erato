@@ -4,13 +4,13 @@
 
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
-    Blank Page <small>blank page</small>
+    主页 <small>ALPS组立工程生产管理监控平台</small>
 </h3>
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
             <i class="fa fa-home"></i>
-            <a href="index.html">Home</a>
+            <a href="/">主页</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -53,3 +53,12 @@
     </div>
 </div>
 <!-- END PAGE CONTENT-->
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            erato.topNavActive($('#menu-home'));           
+        });
+    </script>
+}

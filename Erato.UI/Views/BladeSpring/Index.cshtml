@@ -18,7 +18,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">Blank Page</a>
+            <a href="#">工序入口</a>
         </li>
     </ul>
     <div class="page-toolbar">
@@ -61,8 +61,6 @@
                     <a href="#portlet-config" data-toggle="modal" class="config">
                     </a>
                     <a href="javascript:;" class="reload">
-                    </a>
-                    <a href="" class="fullscreen">
                     </a>
                     <a href="javascript:;" class="remove">
                     </a>
@@ -133,7 +131,7 @@
         <div class="portlet">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>操作
+                    <i class="fa fa-gears"></i>操作
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -142,15 +140,13 @@
                     </a>
                     <a href="javascript:;" class="reload">
                     </a>
-                    <a href="" class="fullscreen">
-                    </a>
                     <a href="javascript:;" class="remove">
                     </a>
                 </div>
             </div>
             <div class="portlet-body">
-                <input type="button" class="btn red btn-block" value="新建批次">
-                <input type="submit" class="btn purple btn-block" value="关闭">
+                <a href="@Url.Action("Create", "BladeSpring")" class="btn red-flamingo btn-block">新建批次</a>
+                <input type="submit" class="btn grey-gallery btn-block" value="关闭">
             </div>
         </div>
     </div>
@@ -159,7 +155,7 @@
 <div class="row ">
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
-        <div class="portlet box red-intense">
+        <div class="portlet box blue-steel">
             <div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-globe"></i>板弹簧信息
@@ -176,7 +172,7 @@
                 </div>
             </div>
             <div class="portlet-body">
-                <table class="table table-striped table-bordered table-hover" id="sample_6">
+                <table class="table table-striped table-bordered table-hover" id="blade-spring-table">
                     <thead>
                         <tr>
                             <th>
@@ -938,3 +934,12 @@
 <div class="clearfix">
 </div>
 <!-- END PAGE CONTENT-->
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            erato.topNavActive($('#menu-center'));
+            erato.initDatatable($('#blade-spring-table'));
+        });
+    </script>
+}

@@ -119,12 +119,48 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\admin\layout\css\custom.css" />
+    <Content Include="assets\admin\layout\css\layout.css" />
+    <Content Include="assets\admin\layout\css\themes\blue.css" />
+    <Content Include="assets\admin\layout\css\themes\darkblue.css" />
+    <Content Include="assets\admin\layout\css\themes\default.css" />
+    <Content Include="assets\admin\layout\css\themes\grey.css" />
+    <Content Include="assets\admin\layout\css\themes\light.css" />
+    <Content Include="assets\admin\layout\css\themes\light2.css" />
+    <Content Include="assets\admin\layout\scripts\layout.js" />
+    <Content Include="assets\global\css\components-rounded.css" />
+    <Content Include="assets\global\css\components.css" />
+    <Content Include="assets\global\css\plugins.css" />
+    <Content Include="assets\global\img\accordion-plusminus.png" />
+    <Content Include="assets\global\img\ajax-loading.gif" />
+    <Content Include="assets\global\img\ajax-modal-loading.gif" />
+    <Content Include="assets\global\img\datatable-row-openclose.png" />
+    <Content Include="assets\global\img\input-spinner.gif" />
+    <Content Include="assets\global\img\loading-spinner-blue.gif" />
+    <Content Include="assets\global\img\loading-spinner-default.gif" />
+    <Content Include="assets\global\img\loading-spinner-grey.gif" />
+    <Content Include="assets\global\img\loading.gif" />
+    <Content Include="assets\global\img\overlay-icon.png" />
+    <Content Include="assets\global\img\portlet-collapse-icon-white.png" />
+    <Content Include="assets\global\img\portlet-collapse-icon.png" />
+    <Content Include="assets\global\img\portlet-config-icon-white.png" />
+    <Content Include="assets\global\img\portlet-config-icon.png" />
+    <Content Include="assets\global\img\portlet-expand-icon-white.png" />
+    <Content Include="assets\global\img\portlet-expand-icon.png" />
+    <Content Include="assets\global\img\portlet-reload-icon-white.png" />
+    <Content Include="assets\global\img\portlet-reload-icon.png" />
+    <Content Include="assets\global\img\portlet-remove-icon-white.png" />
+    <Content Include="assets\global\img\portlet-remove-icon.png" />
+    <Content Include="assets\global\img\remove-icon-small.png" />
+    <Content Include="assets\global\img\syncfusion-icons-white.png" />
+    <Content Include="assets\global\img\syncfusion-icons.png" />
+    <Content Include="assets\global\scripts\datatable.js" />
+    <Content Include="assets\global\scripts\metronic.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\erato.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -133,8 +169,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -151,6 +185,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\BladeSpring\Index.cshtml" />
+    <Content Include="Views\BladeSpring\Create.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -159,6 +195,20 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Erato.Business\Erato.Business.csproj">
+      <Project>{e17aed20-fa6c-4852-9bf1-e418802735e0}</Project>
+      <Name>Erato.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Erato.Common\Erato.Common.csproj">
+      <Project>{b0097f05-82a9-4978-81d5-48d0657da642}</Project>
+      <Name>Erato.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Erato.Model\Erato.Model.csproj">
+      <Project>{34f64cac-a55e-455e-9df6-18adb1ce47f4}</Project>
+      <Name>Erato.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
