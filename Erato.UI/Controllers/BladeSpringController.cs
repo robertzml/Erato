@@ -25,6 +25,23 @@ namespace Erato.UI.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 添加板弹簧
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Create(BladeSpring model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            return View();
+        }
         #endregion //Action
     }
 }

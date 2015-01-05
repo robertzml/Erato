@@ -20,6 +20,8 @@ namespace Erato.Model
         /// <summary>
         /// 机种
         /// </summary>
+        [Required]
+        [Display(Name = "机种")]
         public string Type { get; set; }
 
         /// <summary>
