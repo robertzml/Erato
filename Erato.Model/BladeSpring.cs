@@ -27,6 +27,8 @@ namespace Erato.Model
         /// <summary>
         /// 客户名
         /// </summary>
+        [Required]
+        [Display(Name = "客户名")]
         public string Custom { get; set; }
 
         [StringLength(1)]

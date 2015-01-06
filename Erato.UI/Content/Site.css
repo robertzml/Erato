@@ -7,3 +7,11 @@ body, h1, h2, h3, h4, h5, h6 {
 .page-header.navbar .hor-menu .navbar-nav > li .dropdown-menu li > a {
     font-family: '微软雅黑';
 }
+
+.page-header.navbar .page-logo {
+	width: 400px;
+}
+
+.page-header.navbar .page-logo .logo-default {
+	margin: 2px 0;
+}
