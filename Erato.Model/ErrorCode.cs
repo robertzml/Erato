@@ -31,6 +31,12 @@ namespace Erato.Model
         Exception = 2,
 
         /// <summary>
+        /// 未实现程序
+        /// </summary>
+        [Display(Name = "未实现程序")]
+        NotImplement = 3,
+
+        /// <summary>
         /// 用户不存在
         /// </summary>
         [Display(Name = "用户不存在")]

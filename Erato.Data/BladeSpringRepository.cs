@@ -14,10 +14,7 @@ namespace Erato.Data
     public class BladeSpringRepository
     {
         #region Field
-        /// <summary>
-        /// 数据库连接
-        /// </summary>
-        private Sqlite sqlite;
+        
         #endregion //Field
 
         #region Constructor
@@ -26,7 +23,6 @@ namespace Erato.Data
         /// </summary>
         public BladeSpringRepository()
         {
-            this.sqlite = new Sqlite();
         }
         #endregion //Constructor
 
@@ -37,21 +33,7 @@ namespace Erato.Data
         /// <returns></returns>
         public IEnumerable<BladeSpring> Get()
         {
-            string sql = "SELECT * FROM BladeSpring";
-            DataTable dt = this.sqlite.ExecuteQuery(sql);
-
-            List<BladeSpring> data = new List<BladeSpring>();
-            foreach(DataRow row in dt.Rows)
-            {
-                BladeSpring bs = new BladeSpring();
-                bs.LotNo = row["LotNo"].ToString();
-                bs.Type = row["MachineType"].ToString();
-                bs.Custom = row["ClientName"].ToString();               
-
-                data.Add(bs);
-            }
-
-            return data;
+            return null;
         }
 
         /// <summary>
@@ -61,18 +43,7 @@ namespace Erato.Data
         /// <returns></returns>
         public ErrorCode Create(BladeSpring data)
         {
-            try
-            {
-                string sql = string.Format("INSERT INTO BladeSpring(LotNo, MachineType, ClientName) VALUES('{0}', '{1}', '{2}')",
-                    data.LotNo, data.Type, data.Custom);
-
-                this.sqlite.ExecuteNonQuery(sql);
-            }
-            catch (Exception)
-            {
-                return ErrorCode.Exception;
-            }
-            return ErrorCode.Success;
+            return ErrorCode.NotImplement;
         }
         #endregion //Method
     }

@@ -14,10 +14,7 @@ namespace Erato.Data
     public class UserRepository
     {
         #region Field
-        /// <summary>
-        /// 数据库连接
-        /// </summary>
-        private Sqlite sqlite;
+       
         #endregion //Field
 
         #region Constructor
@@ -26,7 +23,7 @@ namespace Erato.Data
         /// </summary>
         public UserRepository()
         {
-            this.sqlite = new Sqlite();
+           
         }
         #endregion //Constructor
 
@@ -38,17 +35,8 @@ namespace Erato.Data
         /// <returns></returns>
         public User GetByUserName(string userName)
         {
-            string sql = string.Format("SELECT * FROM User WHERE UserName = '{0}'", userName);
-
-            DataRow row = this.sqlite.ExecuteRow(sql);
-
-            if (row == null)
-                return null;
-
             User user = new User();
-            user.UserName = row["UserName"].ToString();
-            user.Password = row["Password"].ToString();
-
+            user.UserName = "admin";
             return user;
         }
         #endregion //Method

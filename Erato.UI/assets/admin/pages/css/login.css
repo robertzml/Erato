@@ -77,14 +77,6 @@ Login page
   padding-right: 9px;
 }
 
-.login .content .forget-form {
-  display: none;
-}
-
-.login .content .register-form {
-  display: none;
-}
-
 .login .content .form-title {
   font-weight: 300;
   margin-bottom: 25px;
@@ -111,32 +103,9 @@ Login page
   color: #7d91aa !important;
 }
 
-.login-options .social-icons {
-  float: right;
-  padding-top: 3px;
-}
-
-.login-options .social-icons li a {
-  border-radius: 15px 15px 15px 15px !important;
-  -moz-border-radius: 15px 15px 15px 15px !important;
-  -webkit-border-radius: 15px 15px 15px 15px !important;
-}
-
 .login .content .form-actions .checkbox {
   margin-left: 0;
   padding-left: 0;
-}
-
-.login .content .forget-form .form-actions {
-  border: 0;
-  margin-bottom: 0;
-  padding-bottom: 20px;
-}
-
-.login .content .register-form .form-actions {
-  border: 0;
-  margin-bottom: 0;
-  padding-bottom: 0px;
 }
 
 .login .content .form-actions .btn {
@@ -177,28 +146,6 @@ Login page
   margin-top: 10px;
 }
 
-.login .content .create-account {
-  margin: 0 -40px -40px -40px;
-  padding: 15px 0 17px 0;
-  text-align: center;
-  background-color: #6c7a8d;
-  -webkit-border-radius: 0 0 7px 7px;
-  -moz-border-radius: 0 0 7px 7px;
-  -ms-border-radius: 0 0 7px 7px;
-  -o-border-radius: 0 0 7px 7px;
-  border-radius: 0 0 7px 7px;
-}
-
-.login .content .create-account p a {
-  font-weight: 600;
-  font-size: 14px;
-  color: #c3cedd;
-}
-
-.login .content .create-account a {
-  display: inline-block;
-  margin-top: 5px;
-}
 
 /* footer copyright */
 .login .copyright {
@@ -224,16 +171,6 @@ Login page
 
   .login .content h3 {
     font-size: 22px;
-  }
-
-  .forget-password {
-    display: inline-block;
-    margin-top: 20px;
-  }
-
-  .login-options .social-icons {
-    float: left;
-    padding-top: 3px;
   }
 
   .login .checkbox {

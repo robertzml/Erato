@@ -50,6 +50,9 @@ namespace Erato.Business
         /// <returns></returns>
         public ErrorCode Login(string userName, string password)
         {
+            return ErrorCode.Success;
+
+            /*
             User user = this.userRepository.GetByUserName(userName);
 
             if (user == null)
@@ -58,7 +61,7 @@ namespace Erato.Business
             if (Hasher.SHA1Encrypt(password) == user.Password)
                 return ErrorCode.Success;
             else
-                return ErrorCode.WrongPassword;
+                return ErrorCode.WrongPassword;*/
         }
         #endregion //Method
     }

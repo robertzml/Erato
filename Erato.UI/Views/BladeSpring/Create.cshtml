@@ -28,6 +28,70 @@
 <!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-codepen"></i>RFID信息
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                @using (Html.BeginForm("Create", "BladeSpring", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">RFID卡卡号</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">状态信息</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">操作信息</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" class="btn purple-medium" role="button"><i class="fa fa-check"></i>&nbsp;检查</a>
+                                <a href="#" class="btn blue-madison" role="button"><i class="fa fa-clock-o"></i>&nbsp;初始化</a>
+                                <a href="#" class="btn green-haze" role="button"><i class="fa fa-unlock"></i>&nbsp;解锁并初始化</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">
@@ -51,7 +115,7 @@
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <h3 class="form-section">板弹簧信息</h3>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.LotNo, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -60,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -69,11 +133,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--/span-->
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Custom, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -82,7 +142,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Products, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -91,10 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Line, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -103,7 +163,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -115,7 +175,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Shifts, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -124,7 +184,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Products, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -137,7 +197,7 @@
 
                         <h3 class="form-section">型号</h3>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.SeqNum, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -146,7 +206,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.MetalType, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -155,9 +215,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Cavity, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -167,10 +225,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <h3 class="form-section">线圈</h3>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -179,7 +237,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Coils, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -192,7 +250,7 @@
 
                         <h3 class="form-section">下板弹簧</h3>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.DSprings, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -201,7 +259,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.DefectiveNum, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -214,7 +272,7 @@
 
                         <h3 class="form-section">外观</h3>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Output, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -223,7 +281,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.DefRecoder, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -232,10 +290,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Stat, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -244,7 +299,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                        </div>
+
+                        <div class="row">                           
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.CleanOperator, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -253,10 +311,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.OperationTime, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -265,7 +320,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Operator, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
@@ -276,18 +331,12 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="form-actions">
+
+                    <div class="form-actions right">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button type="submit" class="btn green"><i class="fa fa-save"></i>&nbsp;保存</button>
-                                        <a href="@Url.Action("Index", new { controller = "BladeSpring" })" class="btn btn-default" role="button"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn green"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <a href="@Url.Action("Index", new { controller = "BladeSpring" })" class="btn btn-default" role="button"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</a>
                             </div>
                         </div>
                     </div>
@@ -295,7 +344,7 @@
                 <!-- END FORM-->
             </div>
         </div>
-       
+
     </div>
 </div>
 <!-- END PAGE CONTENT-->
