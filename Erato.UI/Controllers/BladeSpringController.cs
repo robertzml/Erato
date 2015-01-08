@@ -16,6 +16,12 @@ namespace Erato.UI.Controllers
             return View();
         }
 
+
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
         /// <summary>
         /// 添加板弹簧
         /// </summary>
@@ -42,6 +48,8 @@ namespace Erato.UI.Controllers
 
             return View();
         }
+
+        
         #endregion //Action
     }
 }
