@@ -10,7 +10,7 @@ namespace Erato.Model
     /// <summary>
     /// 板弹簧类
     /// </summary>
-    public class BladeSpring
+    public class BladeSpring : MongoEntity
     {
         /// <summary>
         /// LOTNO

@@ -47,5 +47,17 @@ namespace Erato.Model
         /// </summary>
         [Display(Name = "密码错误")]
         WrongPassword = 11,
+
+        /// <summary>
+        /// 用户ID重复
+        /// </summary>
+        [Display(Name = "用户ID重复")]
+        DuplicateUserId = 12,
+
+        /// <summary>
+        /// 用户名称重复
+        /// </summary>
+        [Display(Name = "用户名称重复")]
+        DuplicateUserName = 13
     }
 }

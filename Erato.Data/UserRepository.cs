@@ -13,8 +13,11 @@ namespace Erato.Data
     /// </summary>
     public class UserRepository
     {
-        #region Field
-       
+        #region Field        
+        /// <summary>
+        /// Repository对象
+        /// </summary>
+        private IMongoRepository<User> repository;        
         #endregion //Field
 
         #region Constructor
@@ -23,7 +26,7 @@ namespace Erato.Data
         /// </summary>
         public UserRepository()
         {
-           
+            this.repository = new MongoRepository<User>(RheaServer.EratoDatabase);
         }
         #endregion //Constructor
 
@@ -35,9 +38,34 @@ namespace Erato.Data
         /// <returns></returns>
         public User GetByUserName(string userName)
         {
-            User user = new User();
-            user.UserName = "admin";
-            return user;
+            var data = this.repository.Where(r => r.UserName == userName);
+            if (data.Count() == 0)
+                return null;
+            else
+                return data.First();
+        }
+
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="data">用户信息</param>
+        /// <returns></returns>
+        public ErrorCode Create(User data)
+        {
+            try
+            {
+                bool dup = this.repository.Exists(r => r.UserName == data.UserName);
+                if (dup)
+                    return ErrorCode.DuplicateUserName;
+
+                this.repository.Add(data);
+            }
+            catch(Exception)
+            {
+                return ErrorCode.Exception;
+            }
+
+            return ErrorCode.Success;
         }
         #endregion //Method
     }

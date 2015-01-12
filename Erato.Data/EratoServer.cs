@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Erato.FormUI
+namespace Erato.Data
 {
     /// <summary>
-    /// 窗体常量类
+    /// Erato服务器
     /// </summary>
-    public static class FormConstant
+    public class RheaServer
     {
+        #region Field
         /// <summary>
-        /// 消息框标题
+        /// Erato数据库
         /// </summary>
-        public static readonly string MessageBoxTitle = "ALPS组立工程生产管理监控平台";
+        public static readonly string EratoDatabase = "erato";
+        #endregion //Field
     }
 }
