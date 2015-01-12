@@ -1,5 +1,23 @@
 
 var erato = function() {
+	var handleTostarMessage = function(message) {
+		
+		toastr.options = {
+			"closeButton": true,			
+			"progressBar": true,
+			"positionClass": "toast-top-center",
+			"onclick": null,
+			"showDuration": "300",
+			"hideDuration": "1000",
+			"timeOut": "5000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		};
+		toastr['info'](message);
+	}
 
 	var handleTopNavActive =  function($dom) {
 		$('ul#top-nav').children().removeClass('active');	
@@ -76,6 +94,10 @@ var erato = function() {
 	}
 	
 	return {
+		showMessage: function(message) {
+			handleTostarMessage(message);
+		},
+	
 		topNavActive: function($dom) {
             handleTopNavActive($dom);
         },

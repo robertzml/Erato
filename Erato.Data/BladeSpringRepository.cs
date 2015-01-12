@@ -9,20 +9,24 @@ using System.Threading.Tasks;
 namespace Erato.Data
 {
     /// <summary>
-    /// 
+    /// 板弹簧 Repository
     /// </summary>
     public class BladeSpringRepository
     {
         #region Field
-        
+        /// <summary>
+        /// Repository对象
+        /// </summary>
+        private IMongoRepository<BladeSpring> repository;
         #endregion //Field
 
         #region Constructor
         /// <summary>
-        /// 用户 Repository
+        /// 板弹簧 Repository
         /// </summary>
         public BladeSpringRepository()
         {
+            this.repository = new MongoRepository<BladeSpring>(RheaServer.EratoDatabase);
         }
         #endregion //Constructor
 
@@ -33,7 +37,17 @@ namespace Erato.Data
         /// <returns></returns>
         public IEnumerable<BladeSpring> Get()
         {
-            return null;
+            return this.repository.AsEnumerable();
+        }
+
+        /// <summary>
+        /// 获取板弹簧
+        /// </summary>
+        /// <param name="id">ID</param>
+        /// <returns></returns>
+        public BladeSpring Get(string id)
+        {
+            return this.repository.GetById(id);
         }
 
         /// <summary>
@@ -43,7 +57,16 @@ namespace Erato.Data
         /// <returns></returns>
         public ErrorCode Create(BladeSpring data)
         {
-            return ErrorCode.NotImplement;
+            try
+            {
+                this.repository.Add(data);
+
+                return ErrorCode.Success;
+            }
+            catch (Exception)
+            {
+                return ErrorCode.Exception;
+            }
         }
         #endregion //Method
     }

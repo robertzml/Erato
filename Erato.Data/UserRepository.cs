@@ -13,11 +13,11 @@ namespace Erato.Data
     /// </summary>
     public class UserRepository
     {
-        #region Field        
+        #region Field
         /// <summary>
         /// Repository对象
         /// </summary>
-        private IMongoRepository<User> repository;        
+        private IMongoRepository<User> repository;
         #endregion //Field
 
         #region Constructor
@@ -60,7 +60,7 @@ namespace Erato.Data
 
                 this.repository.Add(data);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return ErrorCode.Exception;
             }
