@@ -1,0 +1,241 @@
+﻿@model Erato.Model.BladeSpring
+
+@{
+    ViewBag.Title = "删除板弹簧";
+}
+
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    @ViewBag.Title <small>板弹簧工序</small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="/">主页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">板弹簧工序</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">@ViewBag.Title</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-header"></i>板弹簧信息
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <h3>是否确定删除该信息?</h3>
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width:20%;">属性</th>
+                            <th>值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.LotNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.LotNo)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Type)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Custom)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Custom)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Products)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Products)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Line)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Line)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Date)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Date)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Shifts)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Shifts)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.SeqNum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.SeqNum)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.MetalType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.MetalType)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Cavity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Cavity)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Total)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Total)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Coils)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Coils)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.DSprings)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.DSprings)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.DefectiveNum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.DefectiveNum)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Output)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Output)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.DefRecoder)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.DefRecoder)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Stat)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Stat)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.CleanOperator)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.CleanOperator)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.OperationTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.OperationTime)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Operator)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Operator)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(item => item._id)
+                    
+                    <div class="form-actions no-color">
+                        <input type="submit" value="删除" class="btn btn-danger" /> |
+                        <a href="@Url.Action("Index", new { controller = "BladeSpring" })" class="btn btn-primary" role="button"><i class="fa fa-list"></i>&nbsp;回到列表</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            erato.topNavActive($('#menu-center'));
+        });
+    </script>
+}

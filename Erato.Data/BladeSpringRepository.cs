@@ -68,6 +68,44 @@ namespace Erato.Data
                 return ErrorCode.Exception;
             }
         }
+
+        /// <summary>
+        /// 编辑板弹簧
+        /// </summary>
+        /// <param name="data">板弹簧数据</param>
+        /// <returns></returns>
+        public ErrorCode Update(BladeSpring data)
+        {
+            try
+            {
+                this.repository.Update(data);
+            }
+            catch (Exception)
+            {
+                return ErrorCode.Exception;
+            }
+
+            return ErrorCode.Success;
+        }
+
+        /// <summary>
+        /// 删除板弹簧
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ErrorCode Delete(string id)
+        {
+            try
+            {
+                this.repository.Delete(id);
+            }
+            catch (Exception)
+            {
+                return ErrorCode.Exception;
+            }
+
+            return ErrorCode.Success;
+        }
         #endregion //Method
     }
 }

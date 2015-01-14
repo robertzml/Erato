@@ -93,6 +93,25 @@ var erato = function() {
 		return oTable;
 	}
 	
+	var handleInitDatePicker = function($dom, today) {
+		if (today == true) {
+			$dom.datepicker({
+				format: "yyyy-mm-dd",
+				weekStart: 7,
+				language: "zh-CN",
+				autoclose: true,
+				todayHighlight: true
+			});
+		} else {
+			$dom.datepicker({
+                format: "yyyy-mm-dd",
+                weekStart: 7,
+                language: "zh-CN",
+                autoclose: true
+            });
+		}
+	}
+	
 	return {
 		showMessage: function(message) {
 			handleTostarMessage(message);
@@ -104,6 +123,10 @@ var erato = function() {
 
 		initDatatable: function($dom) {
 			return handleInitDatatable($dom);
+		},
+
+		initDatePicker: function($dom, today) {
+			handleInitDatePicker($dom, today);
 		}
 	};
 }();

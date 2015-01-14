@@ -301,7 +301,7 @@
                             </div>
                         </div>
 
-                        <div class="row">                           
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.CleanOperator, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -353,6 +353,7 @@
     <script type="text/javascript">
         $(function () {
             erato.topNavActive($('#menu-center'));
+            erato.initDatePicker($('#OperationTime'), true);
         });
     </script>
 }
