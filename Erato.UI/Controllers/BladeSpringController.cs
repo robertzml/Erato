@@ -29,16 +29,29 @@ namespace Erato.UI.Controllers
         #endregion //Constructor
 
         #region Action
-        // GET: BladeSpring
+        /// <summary>
+        /// 板弹簧主页
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            var data = this.bladeSpringBusiness.Get();
+            return View(data);
         }
 
 
-        public ActionResult Details(int id)
+        /// <summary>
+        /// 板弹簧信息
+        /// </summary>
+        /// <param name="id">ID</param>
+        /// <returns></returns>
+        public ActionResult Details(string id)
         {
-            return View();
+            var data = this.bladeSpringBusiness.Get(id);
+            if (data == null)
+                return HttpNotFound();
+
+            return View(data);
         }
 
         /// <summary>
@@ -77,7 +90,88 @@ namespace Erato.UI.Controllers
             }
 
             return View();
-        }        
+        }
+
+        /// <summary>
+        /// 编辑板弹簧
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Edit(string id)
+        {
+            var data = this.bladeSpringBusiness.Get(id);
+            if (data == null)
+                return HttpNotFound();
+
+            return View(data);
+        }
+
+        /// <summary>
+        /// 编辑板弹簧
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Edit(BladeSpring model)
+        {
+            if (ModelState.IsValid)
+            {
+                ErrorCode result = this.bladeSpringBusiness.Update(model);
+
+                if (result == ErrorCode.Success)
+                {
+                    TempData["Message"] = "编辑板弹簧成功";
+                    return RedirectToAction("Details", new { id = model._id });
+                }
+                else
+                {
+                    TempData["Message"] = "编辑板弹簧失败";
+                    ModelState.AddModelError("", "编辑板弹簧失败: " + result.DisplayName());
+                }
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 删除板弹簧
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Delete(string id)
+        {
+            var data = this.bladeSpringBusiness.Get(id);
+            if (data == null)
+                return HttpNotFound();
+
+            return View(data);
+        }
+
+        /// <summary>
+        /// 删除板弹簧
+        /// </summary>
+        /// <returns></returns>
+        [ValidateAntiForgeryToken]
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirm()
+        {
+            string id = Request.Form["_id"];
+
+            ErrorCode result = this.bladeSpringBusiness.Delete(id);
+            if (result == ErrorCode.Success)
+            {
+                TempData["Message"] = "删除板弹簧成功";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["Message"] = "删除板弹簧失败";
+                return RedirectToAction("Delete", new { id = id });
+            }
+        }
         #endregion //Action
     }
 }

@@ -26,7 +26,7 @@ namespace Erato.Business
         /// </summary>
         public BladeSpringBusiness()
         {
-            this.bladeSpringRepository = new BladeSpringRepository(); 
+            this.bladeSpringRepository = new BladeSpringRepository();
         }
         #endregion //Constructor
 
@@ -41,6 +41,16 @@ namespace Erato.Business
         }
 
         /// <summary>
+        /// 获取板弹簧
+        /// </summary>
+        /// <param name="id">ID</param>
+        /// <returns></returns>
+        public BladeSpring Get(string id)
+        {
+            return this.bladeSpringRepository.Get(id);
+        }
+
+        /// <summary>
         /// 添加板弹簧
         /// </summary>
         /// <param name="data">板弹簧对象</param>
@@ -48,6 +58,38 @@ namespace Erato.Business
         public ErrorCode Create(BladeSpring data)
         {
             return this.bladeSpringRepository.Create(data);
+        }
+
+        /// <summary>
+        /// 编辑板弹簧,对象整体更新
+        /// </summary>
+        /// <param name="data">板弹簧对象</param>
+        /// <returns></returns>
+        /// <remarks>对象整体更新，新建对象覆盖。</remarks>
+        public ErrorCode Update(BladeSpring data)
+        {
+            return this.bladeSpringRepository.Update(data);
+        }
+
+        /// <summary>
+        /// 编辑板弹簧,对象部分更新
+        /// </summary>
+        /// <param name="data">板弹簧对象</param>
+        /// <returns></returns>
+        /// <remarks>对象部分更新，仅编辑对象自身部分属性。</remarks>
+        public ErrorCode Edit(BladeSpring data)
+        {
+            return this.bladeSpringRepository.Update(data);
+        }
+
+        /// <summary>
+        /// 删除板弹簧
+        /// </summary>
+        /// <param name="id">ID</param>
+        /// <returns></returns>
+        public ErrorCode Delete(string id)
+        {
+            return this.bladeSpringRepository.Delete(id);
         }
         #endregion //Method
     }
