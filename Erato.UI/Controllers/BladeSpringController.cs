@@ -6,12 +6,15 @@ using System.Web.Mvc;
 using Erato.Business;
 using Erato.Common;
 using Erato.Model;
+using Erato.UI.Filters;
+using Erato.UI.Services;
 
 namespace Erato.UI.Controllers
 {
     /// <summary>
     /// 板弹簧控制器
     /// </summary>
+    [EnhancedAuthorize]
     public class BladeSpringController : Controller
     {
         #region Field
@@ -35,6 +38,9 @@ namespace Erato.UI.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
+            var user = PageService.GetCurrentUser(User.Identity.Name);
+            ViewBag.User = user;
+
             var data = this.bladeSpringBusiness.Get();
             return View(data);
         }
