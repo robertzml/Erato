@@ -113,6 +113,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BladeSpringController.cs" />
+    <Compile Include="Controllers\DryCleanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\EnhancedAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -245,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DryClean\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

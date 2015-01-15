@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BladeSpringRepository.cs" />
+    <Compile Include="DryCleanRepository.cs" />
     <Compile Include="EratoServer.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="MongoRepository.cs" />

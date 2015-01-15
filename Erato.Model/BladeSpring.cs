@@ -92,6 +92,7 @@ namespace Erato.Model
         [BsonElement("cleanOperator")]
         public string CleanOperator { get; set; }
 
+
         [BsonElement("operationTime")]
         public DateTime OperationTime { get; set; }
 

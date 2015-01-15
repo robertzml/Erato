@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionName.cs" />
+    <Compile Include="DryClean.cs" />
     <Compile Include="ErrorCode.cs" />
     <Compile Include="BladeSpring.cs" />
     <Compile Include="IEntity.cs" />
