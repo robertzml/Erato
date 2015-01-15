@@ -26,3 +26,7 @@ body, h1, h2, h3, h4, h5, h6 {
 .validation-summary-valid {
     display: none;
 }
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle;
+}

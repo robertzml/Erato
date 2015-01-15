@@ -57,6 +57,7 @@ namespace Erato.Business
         /// <returns></returns>
         public ErrorCode Create(DryClean data)
         {
+            data.OperationTime = DateTime.Now;
             return this.dryCleanRepository.Create(data);
         }
 
@@ -68,6 +69,7 @@ namespace Erato.Business
         /// <remarks>对象整体更新，新建对象覆盖。</remarks>
         public ErrorCode Update(DryClean data)
         {
+            data.OperationTime = DateTime.Now;
             return this.dryCleanRepository.Update(data);
         }
 

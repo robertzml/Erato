@@ -12,7 +12,7 @@ namespace Erato.Data
     /// </summary>
     public class DryCleanRepository
     {
-         #region Field
+        #region Field
         /// <summary>
         /// Repository对象
         /// </summary>

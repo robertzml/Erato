@@ -129,7 +129,7 @@ namespace Erato.UI.Controllers
                 if (result == ErrorCode.Success)
                 {
                     TempData["Message"] = "编辑板弹簧成功";
-                    return RedirectToAction("Details", new { id = model._id });
+                    return RedirectToAction("Index");
                 }
                 else
                 {

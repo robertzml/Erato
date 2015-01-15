@@ -243,10 +243,14 @@
     <Content Include="Views\BladeSpring\Details.cshtml" />
     <Content Include="Views\BladeSpring\Edit.cshtml" />
     <Content Include="Views\BladeSpring\Delete.cshtml" />
+    <Content Include="Views\DryClean\Index.cshtml" />
+    <Content Include="Views\DryClean\Create.cshtml" />
+    <Content Include="Views\DryClean\Details.cshtml" />
+    <Content Include="Views\DryClean\Edit.cshtml" />
+    <Content Include="Views\DryClean\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\DryClean\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

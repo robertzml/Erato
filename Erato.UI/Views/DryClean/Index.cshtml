@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Erato.Model.DryClean>
+
+@{
+    ViewBag.Title = "洗净干燥工序";
+}
+
+
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    @ViewBag.Title <small>工序入口</small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#">组立中心</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">洗净干燥工序</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">工序入口</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                Actions <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">Action</a>
+                </li>
+                <li>
+                    <a href="#">Another action</a>
+                </li>
+                <li>
+                    <a href="#">Something else here</a>
+                </li>
+                <li class="divider">
+                </li>
+                <li>
+                    <a href="#">Separated link</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box blue-steel">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i>洗净干燥信息
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="@Url.Action("Create", "DryClean")" class="btn red-flamingo btn-block">新建批次</a>
+                    </div>
+                </div>
+                <hr />
+                <table class="table table-striped table-bordered table-hover" id="dry-clean-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LotNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OperationTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Operator)
+                            </th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LotNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OperationTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Operator)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Details", new { controller = "DryClean", id = item._id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
+                                    <a href="@Url.Action("Edit", new { controller = "DryClean", id = item._id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            erato.topNavActive($('#menu-center'));
+            erato.initDatatable($('#dry-clean-table'));
+        });
+    </script>
+}
