@@ -1,0 +1,161 @@
+﻿@model IEnumerable<Erato.Model.LowSpring>
+
+@{
+    ViewBag.Title = "下板弹簧批次录入";
+}
+
+<!-- BEGIN PAGE HEADER-->
+
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+
+<div class="row ">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box blue-steel">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i>组立中心->部材录入->下板弹簧录入
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+            <div class="table-toolbar">
+					<div class="btn-group">
+						<a href="@Url.Action("Create", "LowSpring")" class="btn green">
+						新建批次 <i class="fa fa-plus"></i>
+						</a>
+					</div>
+				</div>
+                <table class="table table-striped table-bordered table-hover" id="blade-spring-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DrawingNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LotNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OperationTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Operator)
+                            </th>
+                            <th>
+                                操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DrawingNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LotNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OperationTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Operator)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Details", new { controller = "LowSpring", id = item._id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
+                                    <a href="@Url.Action("Edit", new { controller = "LowSpring", id = item._id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+<div class="clearfix">
+</div>
+<!-- END PAGE CONTENT-->
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            erato.topNavActive($('#menu-center'));
+            $('#blade-spring-table').DataTable({
+                "order": [[4, 'desc']],
+
+                "lengthMenu": [
+                    [5, 10, 20, -1],
+                    [5, 10, 20, "All"] // change per page values here
+                ],
+                // set the initial value
+                "pageLength": 10,
+
+                "pagingType": "bootstrap_full_number",
+
+                "language": {
+                    "lengthMenu": "  _MENU_ 记录",
+                    "sLengthMenu": "每页 _MENU_ 条记录",
+                    "sInfo": "显示 _START_ 至 _END_ 共有 _TOTAL_ 条记录",
+                    "sInfoEmpty": "记录为空",
+                    "sInfoFiltered": " - 从 _MAX_ 条记录中",
+                    "sZeroRecords": "结果为空",
+                    "sSearch": "搜索:",
+                    "paginate": {
+                        "previous": "Prev",
+                        "next": "Next",
+                        "last": "Last",
+                        "first": "First"
+                    }
+                },
+
+                "dom": "<'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12' p>>", // horizobtal scrollable datatable
+
+                initComplete: function () {
+                    var api = this.api();
+
+                    api.columns().indexes().flatten().each(function (i) {
+                        var column = api.column(i);
+                        if ($(column.footer()).attr('data-filter') == 'true') {
+
+                            var select = $('<select class="form-control"><option value=""></option></select>')
+                                .appendTo($(column.footer()).empty())
+                                .on('change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+
+                                    column
+                                        .search(val ? '^' + val + '$' : '', true, false)
+                                        .draw();
+                                });
+
+                            column.data().unique().sort().each(function (d, j) {
+                                var re = /<[^>]+>/;
+                                if (re.test(d)) {
+                                    select.append('<option value="' + $(d).html() + '">' + $(d).html() + '</option>')
+                                } else {
+                                    select.append('<option value="' + d + '">' + d + '</option>')
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

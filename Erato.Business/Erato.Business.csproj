@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BladeSpringBusiness.cs" />
+    <Compile Include="CoilBusiness.cs" />
     <Compile Include="DryCleanBusiness.cs" />
+    <Compile Include="LowSpringBusiness.cs" />
     <Compile Include="UserBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

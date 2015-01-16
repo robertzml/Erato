@@ -47,11 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coil.cs" />
     <Compile Include="CollectionName.cs" />
     <Compile Include="DryClean.cs" />
     <Compile Include="ErrorCode.cs" />
     <Compile Include="BladeSpring.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="LowSpring.cs" />
     <Compile Include="MongoEntity.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -113,8 +113,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BladeSpringController.cs" />
+    <Compile Include="Controllers\CoilController.cs" />
     <Compile Include="Controllers\DryCleanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LowSpringController.cs" />
     <Compile Include="Filters\EnhancedAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -248,6 +250,16 @@
     <Content Include="Views\DryClean\Details.cshtml" />
     <Content Include="Views\DryClean\Edit.cshtml" />
     <Content Include="Views\DryClean\Delete.cshtml" />
+    <Content Include="Views\Coil\Create.cshtml" />
+    <Content Include="Views\Coil\Delete.cshtml" />
+    <Content Include="Views\Coil\Details.cshtml" />
+    <Content Include="Views\Coil\Edit.cshtml" />
+    <Content Include="Views\Coil\Index.cshtml" />
+    <Content Include="Views\LowSpring\Create.cshtml" />
+    <Content Include="Views\LowSpring\Delete.cshtml" />
+    <Content Include="Views\LowSpring\Details.cshtml" />
+    <Content Include="Views\LowSpring\Edit.cshtml" />
+    <Content Include="Views\LowSpring\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
