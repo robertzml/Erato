@@ -10,10 +10,10 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace Erato.Model
 {
     /// <summary>
-    /// 磁轭类
+    /// ACT组立类
     /// </summary>
-    [CollectionName("yoke")]
-    public class Yoke : MongoEntity
+    [CollectionName("Act")]
+    public class ACT : MongoEntity
     {
         /// <summary>
         /// LOTNO
@@ -73,17 +73,16 @@ namespace Erato.Model
         [BsonElement("total")]
         public int Total { get; set; }
 
+        [BsonElement("springs")]
+        public string Springs { get; set; }
+
         [BsonElement("yokes")]
         public string Yokes { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [BsonElement("usprings")]
-        public string USprings { get; set; }
 
-        [BsonElement("stone")]
-        public string Stone { get; set; }
+        [BsonElement("buttom")]
+        public string Buttom { get; set; }
+
 
         [BsonElement("defectiveNum")]
         public int DefectiveNum { get; set; }

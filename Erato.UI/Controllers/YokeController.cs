@@ -14,6 +14,7 @@ namespace Erato.UI.Controllers
     /// <summary>
     /// 磁轭控制器
     /// </summary>
+    [EnhancedAuthorize]
     public class YokeController : Controller
     {
         #region Field

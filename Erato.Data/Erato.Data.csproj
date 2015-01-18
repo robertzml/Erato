@@ -48,10 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACTRepository.cs" />
     <Compile Include="BladeSpringRepository.cs" />
     <Compile Include="CoilRepository.cs" />
     <Compile Include="DryCleanRepository.cs" />
     <Compile Include="EratoServer.cs" />
+    <Compile Include="ETestRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="LowSpringRepository.cs" />
     <Compile Include="MongoRepository.cs" />

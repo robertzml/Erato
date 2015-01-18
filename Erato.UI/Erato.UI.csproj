@@ -115,6 +115,7 @@
     <Compile Include="Controllers\BladeSpringController.cs" />
     <Compile Include="Controllers\CoilController.cs" />
     <Compile Include="Controllers\DryCleanController.cs" />
+    <Compile Include="Controllers\ETestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LowSpringController.cs" />
     <Compile Include="Controllers\YokeController.cs" />
@@ -266,6 +267,7 @@
     <Content Include="Views\Yoke\Details.cshtml" />
     <Content Include="Views\Yoke\Edit.cshtml" />
     <Content Include="Views\Yoke\Delete.cshtml" />
+    <Content Include="Views\ETest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
