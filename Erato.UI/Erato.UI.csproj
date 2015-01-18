@@ -117,6 +117,7 @@
     <Compile Include="Controllers\DryCleanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LowSpringController.cs" />
+    <Compile Include="Controllers\YokeController.cs" />
     <Compile Include="Filters\EnhancedAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -260,6 +261,7 @@
     <Content Include="Views\LowSpring\Details.cshtml" />
     <Content Include="Views\LowSpring\Edit.cshtml" />
     <Content Include="Views\LowSpring\Index.cshtml" />
+    <Content Include="Views\Yoke\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
