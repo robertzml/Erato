@@ -57,6 +57,7 @@ namespace Erato.Business
         /// <returns></returns>
         public ErrorCode Create(Yoke data)
         {
+            data.OperationTime = DateTime.Now;
             return this.yokeRepository.Create(data);
         }
 

@@ -37,9 +37,7 @@ namespace Erato.Model
         [Display(Name = "客户名")]
         public string Custom { get; set; }
 
-        /// <summary>
-        /// 板弹簧
-        /// </summary>
+
         [BsonElement("products")]
         [StringLength(1)]
         public string Products { get; set; }
@@ -47,17 +45,20 @@ namespace Erato.Model
         /// <summary>
         /// 线别
         /// </summary>
+        [Display(Name = "线别")]
         [BsonElement("line")]
         public string Line { get; set; }
 
         /// <summary>
         /// 日期
         /// </summary>
+        [Display(Name = "日期")]
         [BsonElement("date")]
         public string Date { get; set; }
 
         [BsonElement("shifts")]
         public string Shifts { get; set; }
+
 
         [BsonElement("seqNum")]
         public string SeqNum { get; set; }
@@ -79,7 +80,7 @@ namespace Erato.Model
         /// </summary>
         [BsonElement("usprings")]
         public string USprings { get; set; }
-                
+
         [BsonElement("stone")]
         public string Stone { get; set; }
 

@@ -262,6 +262,10 @@
     <Content Include="Views\LowSpring\Edit.cshtml" />
     <Content Include="Views\LowSpring\Index.cshtml" />
     <Content Include="Views\Yoke\Index.cshtml" />
+    <Content Include="Views\Yoke\Create.cshtml" />
+    <Content Include="Views\Yoke\Details.cshtml" />
+    <Content Include="Views\Yoke\Edit.cshtml" />
+    <Content Include="Views\Yoke\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
