@@ -10,7 +10,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace Erato.Model
 {
     /// <summary>
-    /// HEF类
+    /// HEF洗净类
     /// </summary>
     [CollectionName("hef")]
     public class HEF : MongoEntity
@@ -26,6 +26,7 @@ namespace Erato.Model
         /// <summary>
         /// 操作时间
         /// </summary>
+        [Display(Name = "操作时间")]
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         [BsonElement("operationTime")]
         public DateTime OperationTime { get; set; }

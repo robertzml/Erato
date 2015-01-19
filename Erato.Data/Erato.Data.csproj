@@ -54,9 +54,11 @@
     <Compile Include="DryCleanRepository.cs" />
     <Compile Include="EratoServer.cs" />
     <Compile Include="ETestRepository.cs" />
+    <Compile Include="HEFRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="LowSpringRepository.cs" />
     <Compile Include="MongoRepository.cs" />
+    <Compile Include="SealRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />

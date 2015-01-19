@@ -21,7 +21,7 @@ namespace Erato.Data
 
         #region Constructor
         /// <summary>
-        /// 板弹簧 Repository
+        /// 洗净干燥 Repository
         /// </summary>
         public DryCleanRepository()
         {

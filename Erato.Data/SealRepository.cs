@@ -8,53 +8,53 @@ using Erato.Model;
 namespace Erato.Data
 {
     /// <summary>
-    /// ACT组立 Repository
+    /// 封止 Repository
     /// </summary>
-    public class ACTRepository
+    public class SealRepository
     {
         #region Field
         /// <summary>
         /// Repository对象
         /// </summary>
-        private IMongoRepository<ACT> repository;
+        private IMongoRepository<Seal> repository;
         #endregion //Field
 
         #region Constructor
         /// <summary>
-        /// ACT组立 Repository
+        /// 封止 Repository
         /// </summary>
-        public ACTRepository()
+        public SealRepository()
         {
-            this.repository = new MongoRepository<ACT>(RheaServer.EratoDatabase);
+            this.repository = new MongoRepository<Seal>(RheaServer.EratoDatabase);
         }
         #endregion //Constructor
 
         #region Method
         /// <summary>
-        /// 获取所有ACT组立
+        /// 获取所有封止
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ACT> Get()
+        public IEnumerable<Seal> Get()
         {
             return this.repository.AsEnumerable();
         }
 
         /// <summary>
-        /// 获取ACT组立
+        /// 获取封止
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns></returns>
-        public ACT Get(string id)
+        public Seal Get(string id)
         {
             return this.repository.GetById(id);
         }
 
         /// <summary>
-        /// 添加ACT组立
+        /// 添加封止
         /// </summary>
-        /// <param name="data">ACT组立数据</param>
+        /// <param name="data">封止数据</param>
         /// <returns></returns>
-        public ErrorCode Create(ACT data)
+        public ErrorCode Create(Seal data)
         {
             try
             {
@@ -69,11 +69,11 @@ namespace Erato.Data
         }
 
         /// <summary>
-        /// 编辑ACT组立
+        /// 编辑封止
         /// </summary>
-        /// <param name="data">ACT组立数据</param>
+        /// <param name="data">封止数据</param>
         /// <returns></returns>
-        public ErrorCode Update(ACT data)
+        public ErrorCode Update(Seal data)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Erato.Data
         }
 
         /// <summary>
-        /// 删除ACT组立
+        /// 删除封止
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
