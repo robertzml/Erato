@@ -22,6 +22,10 @@ namespace Erato.Model
         [BsonElement("lotNo")]
         public string LotNo { get; set; }
 
+        /// <summary>
+        /// 金型
+        /// </summary>
+        [Display(Name = "金型")]
         [BsonElement("metalType")]
         public string MetalType { get; set; }
 
