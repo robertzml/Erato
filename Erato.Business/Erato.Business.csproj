@@ -43,8 +43,10 @@
     <Compile Include="CoilBusiness.cs" />
     <Compile Include="DryCleanBusiness.cs" />
     <Compile Include="ETestBusiness.cs" />
+    <Compile Include="FinalCheckBusiness.cs" />
     <Compile Include="HEFBusiness.cs" />
     <Compile Include="LowSpringBusiness.cs" />
+    <Compile Include="SealBusiness.cs" />
     <Compile Include="UserBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YokeBusiness.cs" />

@@ -9,89 +9,89 @@ using Erato.Model;
 namespace Erato.Business
 {
     /// <summary>
-    /// 板弹簧业务类
+    /// 最终检查业务类
     /// </summary>
-    public class BladeSpringBusiness
+    public class FinalCheckBusiness
     {
         #region Field
         /// <summary>
-        /// 板弹簧 Repsitory
+        /// 最终检查 Repsitory
         /// </summary>
-        private BladeSpringRepository bladeSpringRepository;
+        private FinalCheckRepository finalCheckRepository;
         #endregion //Field
 
         #region Constructor
         /// <summary>
-        /// 板弹簧业务类
+        /// 最终检查类
         /// </summary>
-        public BladeSpringBusiness()
+        public FinalCheckBusiness()
         {
-            this.bladeSpringRepository = new BladeSpringRepository();
+            this.finalCheckRepository = new FinalCheckRepository();
         }
         #endregion //Constructor
 
         #region Method
         /// <summary>
-        /// 获取所有板弹簧
+        /// 获取最终检查
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<BladeSpring> Get()
+        public IEnumerable<FinalCheck> Get()
         {
-            return this.bladeSpringRepository.Get();
+            return this.finalCheckRepository.Get();
         }
 
         /// <summary>
-        /// 获取板弹簧
+        /// 获取最终检查
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns></returns>
-        public BladeSpring Get(string id)
+        public FinalCheck Get(string id)
         {
-            return this.bladeSpringRepository.Get(id);
+            return this.finalCheckRepository.Get(id);
         }
 
         /// <summary>
-        /// 添加板弹簧
+        /// 添加最终检查
         /// </summary>
-        /// <param name="data">板弹簧对象</param>
+        /// <param name="data">最终检查对象</param>
         /// <returns></returns>
-        public ErrorCode Create(BladeSpring data)
+        public ErrorCode Create(FinalCheck data)
         {
             data.OperationTime = DateTime.Now;
-            return this.bladeSpringRepository.Create(data);
+            return this.finalCheckRepository.Create(data);
         }
 
         /// <summary>
-        /// 编辑板弹簧,对象整体更新
+        /// 编辑最终检查,对象整体更新
         /// </summary>
-        /// <param name="data">板弹簧对象</param>
+        /// <param name="data">最终检查对象</param>
         /// <returns></returns>
         /// <remarks>对象整体更新，新建对象覆盖。</remarks>
-        public ErrorCode Update(BladeSpring data)
+        public ErrorCode Update(FinalCheck data)
         {
             data.OperationTime = DateTime.Now;
-            return this.bladeSpringRepository.Update(data);
+            return this.finalCheckRepository.Update(data);
         }
 
         /// <summary>
-        /// 编辑板弹簧,对象部分更新
+        /// 编辑最终检查,对象部分更新
         /// </summary>
-        /// <param name="data">板弹簧对象</param>
+        /// <param name="data">最终检查对象</param>
         /// <returns></returns>
         /// <remarks>对象部分更新，仅编辑对象自身部分属性。</remarks>
-        public ErrorCode Edit(BladeSpring data)
+        public ErrorCode Edit(FinalCheck data)
         {
-            return this.bladeSpringRepository.Update(data);
+            return this.finalCheckRepository.Update(data);
         }
 
         /// <summary>
-        /// 删除板弹簧
+        /// 删除最终检查
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns></returns>
         public ErrorCode Delete(string id)
         {
-            return this.bladeSpringRepository.Delete(id);
+            return this.finalCheckRepository.Delete(id);
         }
         #endregion //Method
     }

@@ -116,9 +116,11 @@
     <Compile Include="Controllers\CoilController.cs" />
     <Compile Include="Controllers\DryCleanController.cs" />
     <Compile Include="Controllers\ETestController.cs" />
+    <Compile Include="Controllers\FinalCheckController.cs" />
     <Compile Include="Controllers\HEFController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LowSpringController.cs" />
+    <Compile Include="Controllers\SealController.cs" />
     <Compile Include="Controllers\YokeController.cs" />
     <Compile Include="Filters\EnhancedAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -277,6 +279,12 @@
     <Content Include="Views\HEF\Details.cshtml" />
     <Content Include="Views\HEF\Edit.cshtml" />
     <Content Include="Views\HEF\Delete.cshtml" />
+    <Content Include="Views\Seal\Index.cshtml" />
+    <Content Include="Views\Seal\Create.cshtml" />
+    <Content Include="Views\Seal\Details.cshtml" />
+    <Content Include="Views\Seal\Edit.cshtml" />
+    <Content Include="Views\Seal\Delete.cshtml" />
+    <Content Include="Views\FinalCheck\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

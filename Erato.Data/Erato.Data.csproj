@@ -54,6 +54,7 @@
     <Compile Include="DryCleanRepository.cs" />
     <Compile Include="EratoServer.cs" />
     <Compile Include="ETestRepository.cs" />
+    <Compile Include="FinalCheckRepository.cs" />
     <Compile Include="HEFRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="LowSpringRepository.cs" />

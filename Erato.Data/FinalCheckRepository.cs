@@ -8,53 +8,53 @@ using Erato.Model;
 namespace Erato.Data
 {
     /// <summary>
-    /// 电检 Repository 
+    /// 最终检查 Repository
     /// </summary>
-    public class ETestRepository
+    public class FinalCheckRepository
     {
         #region Field
         /// <summary>
         /// Repository对象
         /// </summary>
-        private IMongoRepository<ETest> repository;
+        private IMongoRepository<FinalCheck> repository;
         #endregion //Field
 
         #region Constructor
         /// <summary>
-        /// 电检 Repository
+        /// 最终检查 Repository
         /// </summary>
-        public ETestRepository()
+        public FinalCheckRepository()
         {
-            this.repository = new MongoRepository<ETest>(RheaServer.EratoDatabase);
+            this.repository = new MongoRepository<FinalCheck>(RheaServer.EratoDatabase);
         }
         #endregion //Constructor
 
         #region Method
         /// <summary>
-        /// 获取所有电检
+        /// 获取所有最终检查
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ETest> Get()
+        public IEnumerable<FinalCheck> Get()
         {
             return this.repository.AsEnumerable();
         }
 
         /// <summary>
-        /// 获取电检
+        /// 获取最终检查
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns></returns>
-        public ETest Get(string id)
+        public FinalCheck Get(string id)
         {
             return this.repository.GetById(id);
         }
 
         /// <summary>
-        /// 添加电检
+        /// 添加最终检查
         /// </summary>
-        /// <param name="data">电检数据</param>
+        /// <param name="data">最终检查数据</param>
         /// <returns></returns>
-        public ErrorCode Create(ETest data)
+        public ErrorCode Create(FinalCheck data)
         {
             try
             {
@@ -69,11 +69,11 @@ namespace Erato.Data
         }
 
         /// <summary>
-        /// 编辑电检
+        /// 编辑最终检查
         /// </summary>
-        /// <param name="data">电检数据</param>
+        /// <param name="data">最终检查数据</param>
         /// <returns></returns>
-        public ErrorCode Update(ETest data)
+        public ErrorCode Update(FinalCheck data)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Erato.Data
         }
 
         /// <summary>
-        /// 删除电检
+        /// 删除最终检查
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
