@@ -1,12 +1,12 @@
-﻿@model Erato.Model.BladeSpring
+﻿@model Erato.Model.ACT
 
 @{
-    ViewBag.Title = "新建批次";
+    ViewBag.Title = "编辑ACT";
 }
 
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
-    @ViewBag.Title <small>板弹簧工序</small>
+    @ViewBag.Title <small>ACT组立工序</small>
 </h3>
 <div class="page-bar">
     <ul class="page-breadcrumb">
@@ -16,7 +16,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">板弹簧工序</a>
+            <a href="#">ACT组立工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -28,10 +28,10 @@
 <!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
-        <div class="portlet box blue">
+        <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-codepen"></i>RFID信息
+                    <i class="fa fa-header"></i>@ViewBag.Title
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -43,87 +43,15 @@
                 </div>
             </div>
             <div class="portlet-body form">
-                @using (Html.BeginForm("Create", "BladeSpring", FormMethod.Post, new { @class = "form-horizontal" }))
+                @using (Html.BeginForm("Edit", "ACT", FormMethod.Post, new { @class = "form-horizontal" }))
                 {
                     @Html.AntiForgeryToken()
+                    @Html.HiddenFor(model => model._id)
+
                     <div class="form-body">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">RFID卡卡号</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">状态信息</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">操作信息</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <object id="cSharpActiveX" classid="clsid:65D8E97F-D3E2-462A-B389-241D7C38C518" style="display: none;"></object>
-                    <script language="JavaScript">
-                        function ReadIDCard() {
-                            var a = document.getElementById("cSharpActiveX");
-                            var strReadResult = a.ReadRFID;
-                            alert(strReadResult);
 
-                            return true;
-                        }
-                    </script>
-                    <div class="form-actions right">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="#" onclick="return ReadIDCard();" class="btn purple-medium" role="button"><i class="fa fa-check"></i>&nbsp;检查</a>
-                                <a href="#" class="btn blue-madison" role="button"><i class="fa fa-clock-o"></i>&nbsp;初始化</a>
-                                <a href="#" class="btn green-haze" role="button"><i class="fa fa-unlock"></i>&nbsp;解锁并初始化</a>
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="portlet box green">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-header"></i>新建批次
-                </div>
-                <div class="tools">
-                    <a href="javascript:;" class="collapse">
-                    </a>
-                    <a href="javascript:;" class="reload">
-                    </a>
-                    <a href="javascript:;" class="remove">
-                    </a>
-                </div>
-            </div>
-            <div class="portlet-body form">
-                <!-- BEGIN FORM-->
-                @using (Html.BeginForm("Create", "BladeSpring", FormMethod.Post, new { @class = "form-horizontal" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="form-body">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <h3 class="form-section">板弹簧信息</h3>
+                        <h3 class="form-section">ACT组立信息</h3>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -240,10 +168,19 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.Coils, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.LabelFor(model => model.Springs, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
-                                        @Html.EditorFor(model => model.Coils, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Coils, "", new { @class = "text-danger help-block" })
+                                        @Html.EditorFor(model => model.Springs, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Springs, "", new { @class = "text-danger help-block" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Yokes, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Yokes, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Yokes, "", new { @class = "text-danger help-block" })
                                     </div>
                                 </div>
                             </div>
@@ -253,10 +190,10 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.DSprings, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.LabelFor(model => model.Buttom, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
-                                        @Html.EditorFor(model => model.DSprings, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.DSprings, "", new { @class = "text-danger help-block" })
+                                        @Html.EditorFor(model => model.Buttom, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Buttom, "", new { @class = "text-danger help-block" })
                                     </div>
                                 </div>
                             </div>
@@ -305,24 +242,6 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.CleanOperator, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.CleanOperator, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.CleanOperator, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.OperationTime, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.OperationTime, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.OperationTime, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
                                     @Html.LabelFor(model => model.Operator, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
                                         @Html.EditorFor(model => model.Operator, new { htmlAttributes = new { @class = "form-control" } })
@@ -337,12 +256,11 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <button type="submit" class="btn green"><i class="fa fa-save"></i>&nbsp;保存</button>
-                                <a href="@Url.Action("Index", new { controller = "BladeSpring" })" class="btn btn-default" role="button"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</a>
+                                <a href="@Url.Action("Index", new { controller = "ACT" })" class="btn btn-default" role="button"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</a>
                             </div>
                         </div>
                     </div>
                 }
-                <!-- END FORM-->
             </div>
         </div>
     </div>
@@ -353,7 +271,6 @@
     <script type="text/javascript">
         $(function () {
             erato.topNavActive($('#menu-center'));
-            erato.initDatePicker($('#OperationTime'), true);
         });
     </script>
 }

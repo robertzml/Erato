@@ -112,6 +112,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ACTController.cs" />
     <Compile Include="Controllers\BladeSpringController.cs" />
     <Compile Include="Controllers\CoilController.cs" />
     <Compile Include="Controllers\DryCleanController.cs" />
@@ -285,6 +286,15 @@
     <Content Include="Views\Seal\Edit.cshtml" />
     <Content Include="Views\Seal\Delete.cshtml" />
     <Content Include="Views\FinalCheck\Index.cshtml" />
+    <Content Include="Views\FinalCheck\Create.cshtml" />
+    <Content Include="Views\FinalCheck\Details.cshtml" />
+    <Content Include="Views\FinalCheck\Edit.cshtml" />
+    <Content Include="Views\FinalCheck\Delete.cshtml" />
+    <Content Include="Views\ACT\Index.cshtml" />
+    <Content Include="Views\ACT\Create.cshtml" />
+    <Content Include="Views\ACT\Details.cshtml" />
+    <Content Include="Views\ACT\Edit.cshtml" />
+    <Content Include="Views\ACT\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

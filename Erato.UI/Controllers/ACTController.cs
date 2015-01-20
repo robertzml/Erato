@@ -12,44 +12,44 @@ using Erato.UI.Services;
 namespace Erato.UI.Controllers
 {
     /// <summary>
-    /// 最终检查控制器
+    /// ACT组立控制器
     /// </summary>
     [EnhancedAuthorize]
-    public class FinalCheckController : Controller
+    public class ACTController : Controller
     {
         #region Field
         /// <summary>
-        /// 最终检查业务
+        /// ACT组立业务对象
         /// </summary>
-        private FinalCheckBusiness finalCheckBusiness;
+        private ACTBusiness actBusiness;
         #endregion //Field
 
         #region Constructor
-        public FinalCheckController()
+        public ACTController()
         {
-            this.finalCheckBusiness = new FinalCheckBusiness();
+            this.actBusiness = new ACTBusiness();
         }
         #endregion //Constructor
 
         #region Action
         /// <summary>
-        /// 最终检查主页
+        /// ACT组立主页
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
         {
-            var data = this.finalCheckBusiness.Get();
+            var data = this.actBusiness.Get();
             return View(data);
         }
 
         /// <summary>
-        /// 最终检查详细
+        /// ACT详细
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public ActionResult Details(string id)
         {
-            var data = this.finalCheckBusiness.Get(id);
+            var data = this.actBusiness.Get(id);
             if (data == null)
                 return HttpNotFound();
 
@@ -57,7 +57,7 @@ namespace Erato.UI.Controllers
         }
 
         /// <summary>
-        /// 添加最终检查
+        /// 添加ACT
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -67,26 +67,26 @@ namespace Erato.UI.Controllers
         }
 
         /// <summary>
-        /// 添加最终检查
+        /// 添加ACT
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Create(FinalCheck model)
+        public ActionResult Create(ACT model)
         {
             if (ModelState.IsValid)
             {
-                ErrorCode result = this.finalCheckBusiness.Create(model);
+                ErrorCode result = this.actBusiness.Create(model);
                 if (result == ErrorCode.Success)
                 {
-                    TempData["Message"] = "添加最终检查成功";
+                    TempData["Message"] = "添加ACT成功";
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    TempData["Message"] = "添加最终检查失败";
-                    ModelState.AddModelError("", "添加最终检查失败: " + result.DisplayName());
+                    TempData["Message"] = "添加ACT失败";
+                    ModelState.AddModelError("", "添加ACT失败: " + result.DisplayName());
                 }
             }
 
@@ -94,14 +94,14 @@ namespace Erato.UI.Controllers
         }
 
         /// <summary>
-        /// 编辑最终检查
+        /// 编辑ACT
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult Edit(string id)
         {
-            var data = this.finalCheckBusiness.Get(id);
+            var data = this.actBusiness.Get(id);
             if (data == null)
                 return HttpNotFound();
 
@@ -109,27 +109,27 @@ namespace Erato.UI.Controllers
         }
 
         /// <summary>
-        /// 编辑最终检查
+        /// 编辑ACT
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Edit(FinalCheck model)
+        public ActionResult Edit(ACT model)
         {
             if (ModelState.IsValid)
             {
-                ErrorCode result = this.finalCheckBusiness.Update(model);
+                ErrorCode result = this.actBusiness.Update(model);
 
                 if (result == ErrorCode.Success)
                 {
-                    TempData["Message"] = "编辑最终检查成功";
+                    TempData["Message"] = "编辑ACT成功";
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    TempData["Message"] = "编辑最终检查失败";
-                    ModelState.AddModelError("", "编辑最终检查失败: " + result.DisplayName());
+                    TempData["Message"] = "编辑ACT失败";
+                    ModelState.AddModelError("", "编辑ACT失败: " + result.DisplayName());
                 }
             }
 
@@ -137,14 +137,14 @@ namespace Erato.UI.Controllers
         }
 
         /// <summary>
-        /// 删除最终检查
+        /// 删除ACT
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
         public ActionResult Delete(string id)
         {
-            var data = this.finalCheckBusiness.Get(id);
+            var data = this.actBusiness.Get(id);
             if (data == null)
                 return HttpNotFound();
 
@@ -152,7 +152,7 @@ namespace Erato.UI.Controllers
         }
 
         /// <summary>
-        /// 删除最终检查
+        /// 删除ACT
         /// </summary>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
@@ -161,15 +161,15 @@ namespace Erato.UI.Controllers
         {
             string id = Request.Form["_id"];
 
-            ErrorCode result = this.finalCheckBusiness.Delete(id);
+            ErrorCode result = this.actBusiness.Delete(id);
             if (result == ErrorCode.Success)
             {
-                TempData["Message"] = "删除最终检查成功";
+                TempData["Message"] = "删除ACT成功";
                 return RedirectToAction("Index");
             }
             else
             {
-                TempData["Message"] = "删除最终检查失败";
+                TempData["Message"] = "删除ACT失败";
                 return RedirectToAction("Delete", new { id = id });
             }
         }
