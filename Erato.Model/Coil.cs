@@ -18,9 +18,9 @@ namespace Erato.Model
         /// <summary>
         /// LOTNO
         /// </summary>
-        [BsonElement("lotNo")]
         [Required]
         [Display(Name = "LOTNO")]
+        [BsonElement("lotNo")]
         public string LotNo { get; set; }
 
         /// <summary>
@@ -31,31 +31,35 @@ namespace Erato.Model
         [Display(Name = "品番")]
         public string ProductNo { get; set; }
 
-        [BsonElement("cavity")]
+        /// <summary>
+        /// 腔体
+        /// </summary>
         [Required]
-        [Display(Name = "cav")]
+        [Display(Name = "腔体")]
+        [BsonElement("cavity")]
         public string Cavity { get; set; }
 
         /// <summary>
         /// 数量
         /// </summary>
-        [BsonElement("quantity")]
         [Required]
         [Display(Name = "数量")]
+        [BsonElement("quantity")]
         public int Quantity { get; set; }
 
         /// <summary>
-        /// 上次操作时间
+        /// 录入时间
         /// </summary>
+        [Display(Name = "录入时间")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         [BsonElement("operationTime")]
-        [Display(Name = "上次操作时间")]
         public DateTime OperationTime { get; set; }
 
         /// <summary>
-        /// 上次操作人
+        /// 录入人工号
         /// </summary>
+        [Display(Name = "录入人工号")]
         [BsonElement("operator")]
-        [Display(Name = "上次操作人")]
         public string Operator { get; set; }
     }
 }

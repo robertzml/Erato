@@ -19,22 +19,23 @@ namespace Erato.Model
         /// LotNo
         /// </summary>
         [Required]
-        [Display(Name = "LotNo")]
+        [Display(Name = "LOTNO")]
         [BsonElement("lotNo")]
         public string LotNo { get; set; }
 
         /// <summary>
-        /// 操作时间
+        /// 录入时间
         /// </summary>
+        [Display(Name = "录入时间")]
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         [BsonElement("operationTime")]
         public DateTime OperationTime { get; set; }
 
         /// <summary>
-        /// 操作员
+        /// 录入人工号
         /// </summary>
-        [Display(Name = "操作员")]
-        [BsonElement("operation")]
+        [Display(Name = "录入人工号")]
+        [BsonElement("operator")]
         public string Operator { get; set; }
     }
 }

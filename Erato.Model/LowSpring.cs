@@ -18,6 +18,7 @@ namespace Erato.Model
         /// <summary>
         /// LOTNO
         /// </summary>
+        [Display(Name = "LOTNO")]
         [BsonElement("lotNo")]
         public string LotNo { get; set; }
 
@@ -38,17 +39,18 @@ namespace Erato.Model
         public int Quantity { get; set; }
 
         /// <summary>
-        /// 上次操作时间
+        /// 录入时间
         /// </summary>
         [BsonElement("operationTime")]
-        [Display(Name = "上次操作时间")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        [Display(Name = "录入时间")]
         public DateTime OperationTime { get; set; }
 
         /// <summary>
-        /// 上次操作人
+        /// 录入人工号
         /// </summary>
         [BsonElement("operator")]
-        [Display(Name = "上次操作人")]
+        [Display(Name = "录入人工号")]
         public string Operator { get; set; }
     }
 }
