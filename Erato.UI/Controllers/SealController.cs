@@ -38,6 +38,9 @@ namespace Erato.UI.Controllers
         public ActionResult Index()
         {
             var data = this.sealBusiness.Get();
+
+            ViewBag.Last = this.sealBusiness.GetLast();
+
             return View(data);
         }
 

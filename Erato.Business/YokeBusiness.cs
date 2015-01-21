@@ -79,6 +79,7 @@ namespace Erato.Business
         /// <remarks>对象整体更新，新建对象覆盖。</remarks>
         public ErrorCode Update(Yoke data)
         {
+            data.OperationTime = DateTime.Now;
             return this.yokeRepository.Update(data);
         }
 

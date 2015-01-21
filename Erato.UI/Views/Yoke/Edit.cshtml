@@ -122,10 +122,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <h3 class="form-section">型号</h3>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.SeqNum, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -135,6 +131,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <h3 class="form-section">型号</h3>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.MetalType, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -153,10 +153,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <h3 class="form-section">磁轭</h3>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -166,37 +162,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Yokes, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.Yokes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Yokes, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
+                        <h3 class="form-section">磁轭</h3>
+                        
+
                         <h3 class="form-section">上板弹簧</h3>
+                        
+                        <h3 class="form-section">磁石</h3>
+
+
+                        <h3 class="form-section">外观</h3>
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.USprings, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.USprings, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.USprings, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Stone, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.Stone, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Stone, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.DefectiveNum, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -206,10 +183,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <h3 class="form-section">外观</h3>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Output, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -228,6 +201,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Stat, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -237,9 +213,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Operator, htmlAttributes: new { @class = "control-label col-md-3" })
