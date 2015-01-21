@@ -51,6 +51,16 @@ namespace Erato.Business
         }
 
         /// <summary>
+        /// 获取上一次批次
+        /// </summary>
+        /// <returns></returns>
+        public Yoke GetLast()
+        {
+            var data = this.yokeRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
+            return data;
+        }
+
+        /// <summary>
         /// 添加磁轭
         /// </summary>
         /// <param name="data">磁轭对象</param>

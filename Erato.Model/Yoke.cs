@@ -101,7 +101,7 @@ namespace Erato.Model
         /// </summary>
         [Display(Name = "磁轭部材")]
         [BsonElement("yokes")]
-        public string Yokes { get; set; }
+        public List<string> Yokes { get; set; }
 
         /// <summary>
         /// 上板弹簧部材
