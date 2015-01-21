@@ -51,6 +51,7 @@
     <Compile Include="UserBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YokeBusiness.cs" />
+    <Compile Include="YokesBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Erato.Common\Erato.Common.csproj">

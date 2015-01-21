@@ -19,7 +19,9 @@ namespace Erato.Model
         /// LOTNO
         /// </summary>
         [Display(Name = "LOTNO")]
+        [Required]
         [BsonElement("lotNo")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "输入的LOTNO必须为9位！")]
         public string LotNo { get; set; }
 
         /// <summary>
@@ -28,6 +30,7 @@ namespace Erato.Model
         [Required]
         [BsonElement("drawingno")]
         [Display(Name = "品番")]
+        [StringLength(13, MinimumLength = 13, ErrorMessage = "输入的品番必须为13位！")]
         public string DrawingNo { get; set; }
 
         /// <summary>
@@ -36,6 +39,7 @@ namespace Erato.Model
         [Required]
         [BsonElement("quantity")]
         [Display(Name = "数量")]
+        [Range(0, Int32.MaxValue)]
         public int Quantity { get; set; }
 
         /// <summary>

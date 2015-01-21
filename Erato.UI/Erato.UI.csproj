@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -103,11 +106,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -123,6 +121,7 @@
     <Compile Include="Controllers\LowSpringController.cs" />
     <Compile Include="Controllers\SealController.cs" />
     <Compile Include="Controllers\YokeController.cs" />
+    <Compile Include="Controllers\YokesController.cs" />
     <Compile Include="Filters\EnhancedAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -295,6 +294,11 @@
     <Content Include="Views\ACT\Details.cshtml" />
     <Content Include="Views\ACT\Edit.cshtml" />
     <Content Include="Views\ACT\Delete.cshtml" />
+    <Content Include="Views\Yokes\Create.cshtml" />
+    <Content Include="Views\Yokes\Delete.cshtml" />
+    <Content Include="Views\Yokes\Details.cshtml" />
+    <Content Include="Views\Yokes\Edit.cshtml" />
+    <Content Include="Views\Yokes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
