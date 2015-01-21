@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "板弹簧工序";
+    BladeSpring last = ViewBag.Last;
 }
 
 <!-- BEGIN PAGE HEADER-->
@@ -68,61 +69,92 @@
                     </a>
                 </div>
             </div>
-            <div class="portlet-body">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div class="dashboard-stat blue-madison">
-                            <div class="visual">
-                                <i class="fa fa-comments"></i>
-                            </div>
-                            <div class="details">
-                                <div class="number">
-                                    1349
+            <div class="portlet-body form">
+                <div class="form-horizontal">
+                    <div class="form-body">
+                        @if (last == null)
+                        {
+                            <h2>无</h2>
+                        }
+                        else
+                        {
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">LOTNO:</label>
+                                        <div class="col-md-9">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.LotNo" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="desc">
-                                    New Feedbacks
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">金型:</label>
+                                        <div class="col-md-9">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.MetalType" />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <a class="more" href="#">
-                                View more <i class="m-icon-swapright m-icon-white"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="dashboard-stat red-intense">
-                            <div class="visual">
-                                <i class="fa fa-bar-chart-o"></i>
-                            </div>
-                            <div class="details">
-                                <div class="number">
-                                    12,5M$
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">腔体:</label>
+                                        <div class="col-md-9">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Cavity" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="desc">
-                                    Total Profit
-                                </div>
-                            </div>
-                            <a class="more" href="#">
-                                View more <i class="m-icon-swapright m-icon-white"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="dashboard-stat green-haze">
-                            <div class="visual">
-                                <i class="fa fa-shopping-cart"></i>
-                            </div>
-                            <div class="details">
-                                <div class="number">
-                                    549
-                                </div>
-                                <div class="desc">
-                                    New Orders
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">数量:</label>
+                                        <div class="col-md-9">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Total" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <a class="more" href="#">
-                                View more <i class="m-icon-swapright m-icon-white"></i>
-                            </a>
-                        </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">外观后数量:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.LotNo" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">不良数:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.DefectiveNum" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">良品数:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Output" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">操作员:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Operator" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">时间:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.OperationTime" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

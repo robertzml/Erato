@@ -8,6 +8,7 @@ using Erato.Common;
 using Erato.Model;
 using Erato.UI.Filters;
 using Erato.UI.Services;
+using Erato.UI.Models;
 
 namespace Erato.UI.Controllers
 {
@@ -42,6 +43,8 @@ namespace Erato.UI.Controllers
             ViewBag.User = user;
 
             var data = this.bladeSpringBusiness.Get();
+            ViewBag.Last = this.bladeSpringBusiness.GetLast();
+
             return View(data);
         }
 

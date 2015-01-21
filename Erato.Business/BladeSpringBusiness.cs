@@ -51,6 +51,16 @@ namespace Erato.Business
         }
 
         /// <summary>
+        /// 获取上一次批次
+        /// </summary>
+        /// <returns></returns>
+        public BladeSpring GetLast()
+        {
+            var data = this.bladeSpringRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
+            return data;
+        }
+
+        /// <summary>
         /// 添加板弹簧
         /// </summary>
         /// <param name="data">板弹簧对象</param>
