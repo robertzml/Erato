@@ -105,27 +105,23 @@ var erato = function() {
             oTable.fnDraw();
         }
 
-        function editRow(oTable, nRow) {
+        function editRow(oTable, nRow, columnCount) {
             var aData = oTable.fnGetData(nRow);
             var jqTds = $('>td', nRow);
-            jqTds[0].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[0] + '">';
-            jqTds[1].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[1] + '">';
-            jqTds[2].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[2] + '">';
-            jqTds[3].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[3] + '">';
-			jqTds[4].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[4] + '">';
-            jqTds[5].innerHTML = '<a class="edit" href="">Save</a>';
-            jqTds[6].innerHTML = '<a class="cancel" href="">Cancel</a>';
+			for (var i = 0; i < columnCount - 2; i++) {
+				jqTds[i].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[i] + '">';
+			}
+			jqTds[columnCount - 2].innerHTML = '<a class="edit" href="">Save</a>';
+			jqTds[columnCount - 1].innerHTML = '<a class="cancel" href="">Cancel</a>';
         }
 
-        function saveRow(oTable, nRow) {
+        function saveRow(oTable, nRow, columnCount) {
             var jqInputs = $('input', nRow);
-            oTable.fnUpdate(jqInputs[0].value, nRow, 0, false);
-            oTable.fnUpdate(jqInputs[1].value, nRow, 1, false);
-            oTable.fnUpdate(jqInputs[2].value, nRow, 2, false);
-            oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
-			oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
-            oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 5, false);
-            oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 6, false);
+			for (var i = 0; i < columnCount - 2; i++) {
+				oTable.fnUpdate(jqInputs[i].value, nRow, i, false);
+			}
+            oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, columnCount - 2, false);
+            oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, columnCount - 1, false);
             oTable.fnDraw();
         }
 
@@ -173,13 +169,14 @@ var erato = function() {
     
         var nEditing = null;
         var nNew = false;
-
+		var columnCount = oTable.api().columns()[0].length;
+		
         $('#sample_editable_1_new').click(function (e) {
             e.preventDefault();
 
             if (nNew && nEditing) {
                 if (confirm("Previose row not saved. Do you want to save it ?")) {
-                    saveRow(oTable, nEditing); // save
+                    saveRow(oTable, nEditing, columnCount); // save
                     $(nEditing).find("td:first").html("Untitled");
                     nEditing = null;
                     nNew = false;
@@ -195,7 +192,7 @@ var erato = function() {
 
             var aiNew = oTable.fnAddData(['', '', '', '', '', '', '']);
             var nRow = oTable.fnGetNodes(aiNew[0]);
-            editRow(oTable, nRow);
+            editRow(oTable, nRow, columnCount);
             nEditing = nRow;
             nNew = true;
         });
@@ -237,15 +234,17 @@ var erato = function() {
                 nEditing = nRow;
             } else if (nEditing == nRow && this.innerHTML == "Save") {
                 /* Editing this row and want to save it */
-                saveRow(oTable, nEditing);
+                saveRow(oTable, nEditing, columnCount);
                 nEditing = null;
-                alert("Updated! Do not forget to do some ajax to sync with backend :)");
+                //alert("Updated! Do not forget to do some ajax to sync with backend :)");
             } else {
                 /* No edit in progress - let's start one */
                 editRow(oTable, nRow);
                 nEditing = nRow;
             }
         });
+		
+		return oTable;
 	}
 	
 	var handleInitDatePicker = function($dom, today) {

@@ -28,6 +28,80 @@
 <!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-codepen"></i>RFID信息
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                @using (Html.BeginForm("", "ACT", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">RFID卡卡号</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">状态信息</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">操作信息</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <object id="cSharpActiveX" classid="clsid:65D8E97F-D3E2-462A-B389-241D7C38C518" style="display: none;"></object>
+                    <script language="JavaScript">
+                        function ReadIDCard() {
+                            var a = document.getElementById("cSharpActiveX");
+                            var strReadResult = a.ReadRFID;
+                            alert(strReadResult);
+
+                            return true;
+                        }
+                    </script>
+                    <div class="form-actions right">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" onclick="return ReadIDCard();" class="btn purple-medium" role="button"><i class="fa fa-check"></i>&nbsp;检查</a>
+                                <a href="#" class="btn blue-madison" role="button"><i class="fa fa-clock-o"></i>&nbsp;初始化</a>
+                                <a href="#" class="btn green-haze" role="button"><i class="fa fa-unlock"></i>&nbsp;解锁并初始化</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">
@@ -120,10 +194,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <h3 class="form-section">型号</h3>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.SeqNum, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -133,6 +203,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <h3 class="form-section">型号</h3>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.MetalType, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -151,10 +225,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <h3 class="form-section">线圈</h3>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -164,37 +234,158 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Springs, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.Springs, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Springs, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Yokes, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.Yokes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Yokes, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
-                        <h3 class="form-section">下板弹簧</h3>
+                        <h3 class="form-section">板弹簧</h3>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.Buttom, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <label class="control-label col-md-3">LOTNO</label>
                                     <div class="col-md-9">
-                                        @Html.EditorFor(model => model.Buttom, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Buttom, "", new { @class = "text-danger help-block" })
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="uspring_new" class="btn green">
+                                        添加 <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped table-hover table-bordered" id="spring-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                LOTNO
+                                            </th>
+                                            <th>
+                                                金型
+                                            </th>
+                                            <th>
+                                                腔体
+                                            </th>
+                                            <th>
+                                                数量
+                                            </th>
+                                            <th>
+                                                Edit
+                                            </th>
+                                            <th>
+                                                Delete
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <h3 class="form-section">磁轭</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">LOTNO</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="uspring_new" class="btn green">
+                                        添加 <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped table-hover table-bordered" id="spring-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                LOTNO
+                                            </th>
+                                            <th>
+                                                金型
+                                            </th>
+                                            <th>
+                                                腔体
+                                            </th>
+                                            <th>
+                                                数量
+                                            </th>
+                                            <th>
+                                                Edit
+                                            </th>
+                                            <th>
+                                                Delete
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <h3 class="form-section">底座</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">LOTNO</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="sample_editable_1_new" class="btn green">
+                                        添加 <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped table-hover table-bordered" id="yoke-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                LOTNO
+                                            </th>
+                                            <th>
+                                                品番
+                                            </th>
+                                            <th>
+                                                型
+                                            </th>
+                                            <th>
+                                                RANK
+                                            </th>
+                                            <th>
+                                                数量
+                                            </th>
+                                            <th>
+                                                Edit
+                                            </th>
+                                            <th>
+                                                Delete
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <h3 class="form-section">外观</h3>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.DefectiveNum, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -204,10 +395,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <h3 class="form-section">外观</h3>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Output, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -226,6 +413,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Stat, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -235,9 +425,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Operator, htmlAttributes: new { @class = "control-label col-md-3" })

@@ -39,6 +39,8 @@ namespace Erato.UI.Controllers
         public ActionResult Index()
         {
             var data = this.etestBusiness.Get();
+            ViewBag.Last = this.etestBusiness.GetLast();
+
             return View(data);
         }
 

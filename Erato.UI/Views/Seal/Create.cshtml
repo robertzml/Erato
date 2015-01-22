@@ -28,6 +28,80 @@
 <!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-codepen"></i>RFID信息
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                @using (Html.BeginForm("", "Seal", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">RFID卡卡号</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">状态信息</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">操作信息</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <object id="cSharpActiveX" classid="clsid:65D8E97F-D3E2-462A-B389-241D7C38C518" style="display: none;"></object>
+                    <script language="JavaScript">
+                        function ReadIDCard() {
+                            var a = document.getElementById("cSharpActiveX");
+                            var strReadResult = a.ReadRFID;
+                            alert(strReadResult);
+
+                            return true;
+                        }
+                    </script>
+                    <div class="form-actions right">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" onclick="return ReadIDCard();" class="btn purple-medium" role="button"><i class="fa fa-check"></i>&nbsp;检查</a>
+                                <a href="#" class="btn blue-madison" role="button"><i class="fa fa-clock-o"></i>&nbsp;初始化</a>
+                                <a href="#" class="btn green-haze" role="button"><i class="fa fa-unlock"></i>&nbsp;解锁并初始化</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">

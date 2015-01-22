@@ -51,6 +51,16 @@ namespace Erato.Business
         }
 
         /// <summary>
+        /// 获取上一批次
+        /// </summary>
+        /// <returns></returns>
+        public ETest GetLast()
+        {
+            var data = this.etestRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
+            return data;
+        }
+
+        /// <summary>
         /// 添加电检
         /// </summary>
         /// <param name="data">电检对象</param>

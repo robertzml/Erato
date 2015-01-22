@@ -38,7 +38,7 @@ namespace Erato.Business
         public IEnumerable<ACT> Get()
         {
             return this.actRepository.Get();
-        }
+        }        
 
         /// <summary>
         /// 获取ACT
@@ -48,6 +48,16 @@ namespace Erato.Business
         public ACT Get(string id)
         {
             return this.actRepository.Get(id);
+        }
+
+        /// <summary>
+        /// 获取上一批次
+        /// </summary>
+        /// <returns></returns>
+        public ACT GetLast()
+        {
+            var data = this.actRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
+            return data;
         }
 
         /// <summary>

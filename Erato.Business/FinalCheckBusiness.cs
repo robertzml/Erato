@@ -51,6 +51,16 @@ namespace Erato.Business
         }
 
         /// <summary>
+        /// 获取前一批次
+        /// </summary>
+        /// <returns></returns>
+        public FinalCheck GetLast()
+        {
+            var data = this.finalCheckRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
+            return data;
+        }
+
+        /// <summary>
         /// 添加最终检查
         /// </summary>
         /// <param name="data">最终检查对象</param>
