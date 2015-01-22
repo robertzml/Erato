@@ -65,6 +65,9 @@
     <Compile Include="Util.cs" />
     <Compile Include="YokeRepository.cs" />
     <Compile Include="YokesRepository.cs" />
+    <Compile Include="UpperSpringRepository.cs" />
+    <Compile Include="MagnetRepository.cs" />
+    <Compile Include="PedestalRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Erato.Model\Erato.Model.csproj">

@@ -64,6 +64,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Yoke.cs" />
     <Compile Include="Yokes.cs" />
+    <Compile Include="UpperSpring.cs" />
+    <Compile Include="Magnet.cs" />
+    <Compile Include="Pedestal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -52,6 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YokeBusiness.cs" />
     <Compile Include="YokesBusiness.cs" />
+    <Compile Include="UpperSpringBusiness.cs" />
+    <Compile Include="MagnetBusiness.cs" />
+    <Compile Include="PedestalBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Erato.Common\Erato.Common.csproj">
