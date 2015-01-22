@@ -210,27 +210,6 @@
                                 @Html.DisplayNameFor(model => model.LotNo)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Type)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Custom)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Products)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Line)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Date)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Shifts)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.SeqNum)
-                            </th>
-                            <th>
                                 @Html.DisplayNameFor(model => model.MetalType)
                             </th>
                             <th>
@@ -240,7 +219,10 @@
                                 @Html.DisplayNameFor(model => model.Total)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Yokes)
+                                @Html.DisplayNameFor(model => model.Operator)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OperationTime)
                             </th>
                             <th>操作</th>
                         </tr>
@@ -253,27 +235,6 @@
                                     @Html.DisplayFor(modelItem => item.LotNo)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Type)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Custom)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Products)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Line)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Date)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Shifts)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.SeqNum)
-                                </td>
-                                <td>
                                     @Html.DisplayFor(modelItem => item.MetalType)
                                 </td>
                                 <td>
@@ -283,7 +244,10 @@
                                     @Html.DisplayFor(modelItem => item.Total)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Yokes)
+                                    @Html.DisplayFor(modelItem => item.Operator)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OperationTime)
                                 </td>
                                 <td>
                                     <a href="@Url.Action("Details", new { controller = "Yoke", id = item._id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>

@@ -92,6 +92,7 @@ namespace Erato.Model
         /// <summary>
         /// 总产量
         /// </summary>
+        [Range(0, Int32.MaxValue)]
         [Display(Name = "总产量")]
         [BsonElement("total")]
         public int Total { get; set; }

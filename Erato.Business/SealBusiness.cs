@@ -51,6 +51,16 @@ namespace Erato.Business
         }
 
         /// <summary>
+        /// 获取上一次批次
+        /// </summary>
+        /// <returns></returns>
+        public Seal GetLast()
+        {
+            var data = this.sealRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
+            return data;
+        }
+
+        /// <summary>
         /// 添加封止
         /// </summary>
         /// <param name="data">封止对象</param>

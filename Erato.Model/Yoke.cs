@@ -108,14 +108,14 @@ namespace Erato.Model
         /// </summary>
         [Display(Name = "上板弹簧部材")]
         [BsonElement("usprings")]
-        public string USprings { get; set; }
+        public List<string> USprings { get; set; }
 
         /// <summary>
         /// 磁石部材
         /// </summary>
         [Display(Name = "磁石部材")]
         [BsonElement("stone")]
-        public string Stone { get; set; }
+        public List<string> Stone { get; set; }
 
         /// <summary>
         /// 不良数
