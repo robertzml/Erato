@@ -10,7 +10,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace Erato.Model
 {
     /// <summary>
-    /// 板弹簧类
+    /// 线圈类
     /// </summary>
     [CollectionName("coil")]
     public class Coil : MongoEntity
@@ -21,6 +21,7 @@ namespace Erato.Model
         [Required]
         [Display(Name = "LOTNO")]
         [BsonElement("lotNo")]
+        [StringLength(17, MinimumLength = 17, ErrorMessage = "输入的LOTNO必须为17位！")]
         public string LotNo { get; set; }
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace Erato.Model
         [BsonElement("productNo")]
         [Required]
         [Display(Name = "品番")]
+        [StringLength(12, MinimumLength = 12, ErrorMessage = "输入的品番必须为12位！")]
         public string ProductNo { get; set; }
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace Erato.Model
         [Required]
         [Display(Name = "腔体")]
         [BsonElement("cavity")]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "输入的腔体必须为2位！")]
         public string Cavity { get; set; }
 
         /// <summary>
@@ -45,6 +48,7 @@ namespace Erato.Model
         [Required]
         [Display(Name = "数量")]
         [BsonElement("quantity")]
+        [Range(0, Int32.MaxValue)]
         public int Quantity { get; set; }
 
         /// <summary>

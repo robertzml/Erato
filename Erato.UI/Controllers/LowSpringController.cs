@@ -88,7 +88,7 @@ namespace Erato.UI.Controllers
                 if (result == ErrorCode.Success)
                 {
                     TempData["Message"] = "添加下板弹簧成功";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Create");
                 }
                 else
                 {

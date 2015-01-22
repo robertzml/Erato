@@ -86,7 +86,7 @@ namespace Erato.UI.Controllers
                 if (result == ErrorCode.Success)
                 {
                     TempData["Message"] = "添加线圈成功";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Create");
                 }
                 else
                 {
