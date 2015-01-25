@@ -34,13 +34,22 @@ namespace Erato.Model
         public string DrawingNo { get; set; }
 
         /// <summary>
-        /// 数量
+        /// 总量
         /// </summary>
         [Required]
+        [Display(Name = "总量")]
         [BsonElement("quantity")]
-        [Display(Name = "数量")]
         [Range(0, Int32.MaxValue)]
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// 使用量
+        /// </summary>
+        [Required]
+        [Display(Name = "使用量")]
+        [BsonElement("usedqty")]
+        [Range(0, Int32.MaxValue)]
+        public int UsedQty { get; set; }
 
         /// <summary>
         /// 录入时间
