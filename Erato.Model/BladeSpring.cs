@@ -40,9 +40,9 @@ namespace Erato.Model
         public string Custom { get; set; }
 
         /// <summary>
-        /// 产品名
+        /// 板弹簧
         /// </summary>
-        [Display(Name = "产品名")]
+        [Display(Name = "板弹簧")]
         [BsonElement("products")]
         [StringLength(1)]
         public string Products { get; set; }
@@ -90,10 +90,10 @@ namespace Erato.Model
         public string Cavity { get; set; }
 
         /// <summary>
-        /// 总产量
+        /// 数量
         /// </summary>
         [Range(0, Int32.MaxValue)]
-        [Display(Name = "总产量")]
+        [Display(Name = "数量")]
         [BsonElement("total")]
         public int Total { get; set; }
 
@@ -119,16 +119,16 @@ namespace Erato.Model
         public int DefectiveNum { get; set; }
 
         /// <summary>
-        /// 良品数
+        /// 外观后数量
         /// </summary>
-        [Display(Name = "良品数")]
+        [Display(Name = "外观后数量")]
         [BsonElement("output")]
         public int Output { get; set; }
 
         /// <summary>
-        /// 不良数录入人工号
+        /// 外观人员
         /// </summary>
-        [Display(Name = "不良数录入人工号")]
+        [Display(Name = "外观人员")]
         [BsonElement("defRecoder")]
         public string DefRecoder { get; set; }
 
