@@ -51,6 +51,9 @@
                                 @Html.DisplayNameFor(model => model.Quantity)
                             </th>
                             <th>
+                                @Html.DisplayNameFor(model => model.UsedQty)
+                            </th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.OperationTime)
                             </th>
                             <th>
@@ -81,6 +84,9 @@
                                     @Html.DisplayFor(modelItem => item.Quantity)
                                 </td>
                                 <td>
+                                    @Html.DisplayFor(modelItem => item.UsedQty)
+                                </td>
+                                <td>
                                     @Html.DisplayFor(modelItem => item.OperationTime)
                                 </td>
                                 <td>
@@ -108,7 +114,7 @@
         $(function () {
             erato.topNavActive($('#menu-center'));
             $('#blade-spring-table').DataTable({
-                "order": [[5, 'desc']],
+                "order": [[6, 'desc']],
 
                 "lengthMenu": [
                     [5, 10, 20, -1],
