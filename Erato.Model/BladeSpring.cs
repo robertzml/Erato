@@ -28,6 +28,7 @@ namespace Erato.Model
         /// </summary>
         [Required]
         [BsonElement("type")]
+        [RegularExpression(@"[A-Z]{2}", ErrorMessage = "请输入2位大写字母")]
         [Display(Name = "机种")]
         public string Type { get; set; }
 
@@ -36,6 +37,7 @@ namespace Erato.Model
         /// </summary>
         [Required]
         [BsonElement("custom")]
+        [RegularExpression(@"[A-Z]{1}", ErrorMessage = "请输入1位大写字母")]
         [Display(Name = "客户")]
         public string Custom { get; set; }
 
@@ -51,6 +53,7 @@ namespace Erato.Model
         /// 线别
         /// </summary>
         [Display(Name = "线别")]
+        [RegularExpression(@"\d{2}", ErrorMessage = "请输入2位数字")]
         [BsonElement("line")]
         public string Line { get; set; }
 
@@ -65,6 +68,7 @@ namespace Erato.Model
         /// 班别
         /// </summary>
         [Display(Name = "班别")]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "请输入2位字符")]
         [BsonElement("shifts")]
         public string Shifts { get; set; }
 
@@ -72,6 +76,7 @@ namespace Erato.Model
         /// 顺番号
         /// </summary>
         [Display(Name = "顺番号")]
+        [RegularExpression(@"\d{2}", ErrorMessage = "请输入2位数字")]
         [BsonElement("seqNum")]
         public string SeqNum { get; set; }
 
@@ -79,6 +84,7 @@ namespace Erato.Model
         /// 金型
         /// </summary>
         [Display(Name = "金型")]
+        [RegularExpression(@"[a-zA-Z]{1}", ErrorMessage = "请输入1位字母")]
         [BsonElement("metalType")]
         public string MetalType { get; set; }
 
@@ -92,7 +98,7 @@ namespace Erato.Model
         /// <summary>
         /// 数量
         /// </summary>
-        [Range(0, Int32.MaxValue)]
+        [Range(0, 1000)]
         [Display(Name = "数量")]
         [BsonElement("total")]
         public int Total { get; set; }
@@ -121,7 +127,11 @@ namespace Erato.Model
         /// <summary>
         /// 外观后数量
         /// </summary>
+        /// <remarks>
+        /// 良品数
+        /// </remarks>
         [Display(Name = "外观后数量")]
+        [Range(0, 1000)]
         [BsonElement("output")]
         public int Output { get; set; }
 

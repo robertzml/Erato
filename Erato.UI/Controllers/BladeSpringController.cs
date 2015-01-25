@@ -70,7 +70,12 @@ namespace Erato.UI.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            BladeSpring model = new BladeSpring();
+            model.Products = "S";
+            model.Date = DateTime.Now.ShortDate();
+            model.Cavity = "-";
+
+            return View(model);
         }
 
         /// <summary>
