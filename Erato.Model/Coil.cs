@@ -31,6 +31,7 @@ namespace Erato.Model
         [Required]
         [Display(Name = "品番")]
         [StringLength(12, MinimumLength = 12, ErrorMessage = "输入的品番必须为12位！")]
+        [RegularExpressionAttribute(@"\b2AE-00082\w{3}\b", ErrorMessage = "输入的品番必须以2AE-00082打头,并且输入总长度为12位！")]
         public string ProductNo { get; set; }
 
         /// <summary>
