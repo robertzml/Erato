@@ -96,9 +96,9 @@ namespace Erato.Model
         public string Cavity { get; set; }
 
         /// <summary>
-        /// 总产量
+        /// 数量
         /// </summary>
-        [Display(Name = "总产量")]
+        [Display(Name = "数量")]
         [Range(0, 1000)]
         [BsonElement("total")]
         public int Total { get; set; }
