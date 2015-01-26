@@ -65,7 +65,10 @@ namespace Erato.UI.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            Seal model = new Seal();           
+            model.Cavity = "-";
+
+            return View(model);
         }
 
         /// <summary>
