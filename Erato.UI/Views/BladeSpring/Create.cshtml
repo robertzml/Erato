@@ -16,7 +16,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">板弹簧工序</a>
+            <a href="@Url.Action("Index", "BladeSpring")">板弹簧工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -123,6 +123,7 @@
                     @Html.AntiForgeryToken()
                     <div class="form-body">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                         <h3 class="form-section">板弹簧信息</h3>
                         <div class="row">
                             <div class="col-md-4">
@@ -239,26 +240,14 @@
                         <h3 class="form-section">线圈</h3>
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Coils, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.Coils, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Coils, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
                         <h3 class="form-section">下板弹簧</h3>
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.DSprings, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.DSprings, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.DSprings, "", new { @class = "text-danger help-block" })
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
 

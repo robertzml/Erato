@@ -16,7 +16,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">板弹簧工序</a>
+            <a href="@Url.Action("Index", "BladeSpring")">板弹簧工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -130,10 +130,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <h3 class="form-section">型号</h3>
-                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.SeqNum, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -143,6 +139,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <h3 class="form-section">型号</h3>
+                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.MetalType, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -161,10 +161,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <h3 class="form-section">线圈</h3>
-                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -174,6 +170,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <h3 class="form-section">线圈</h3>
+                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Coils, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -196,15 +196,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.DefectiveNum, htmlAttributes: new { @class = "control-label col-md-3" })
-                                <div class="col-md-9">
-                                    @Html.EditorFor(model => model.DefectiveNum, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.DefectiveNum, "", new { @class = "text-danger help-block" })
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <h3 class="form-section">外观</h3>
@@ -220,49 +211,19 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
+                                @Html.LabelFor(model => model.DefectiveNum, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-9">
+                                    @Html.EditorFor(model => model.DefectiveNum, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DefectiveNum, "", new { @class = "text-danger help-block" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
                                 @Html.LabelFor(model => model.DefRecoder, htmlAttributes: new { @class = "control-label col-md-3" })
                                 <div class="col-md-9">
                                     @Html.EditorFor(model => model.DefRecoder, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.DefRecoder, "", new { @class = "text-danger help-block" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Stat, htmlAttributes: new { @class = "control-label col-md-3" })
-                                <div class="col-md-9">
-                                    @Html.EditorFor(model => model.Stat, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Stat, "", new { @class = "text-danger help-block" })
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.CleanOperator, htmlAttributes: new { @class = "control-label col-md-3" })
-                                <div class="col-md-9">
-                                    @Html.EditorFor(model => model.CleanOperator, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CleanOperator, "", new { @class = "text-danger help-block" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.OperationTime, htmlAttributes: new { @class = "control-label col-md-3" })
-                                <div class="col-md-9">
-                                    @Html.EditorFor(model => model.OperationTime, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.OperationTime, "", new { @class = "text-danger help-block" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Operator, htmlAttributes: new { @class = "control-label col-md-3" })
-                                <div class="col-md-9">
-                                    @Html.EditorFor(model => model.Operator, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Operator, "", new { @class = "text-danger help-block" })
                                 </div>
                             </div>
                         </div>
