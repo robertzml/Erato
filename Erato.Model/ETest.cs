@@ -27,6 +27,7 @@ namespace Erato.Model
         /// 金型
         /// </summary>
         [Display(Name = "金型")]
+        [RegularExpression(@"[a-zA-Z]{1}", ErrorMessage = "请输入1位字母")]
         [BsonElement("metalType")]
         public string MetalType { get; set; }
 
@@ -38,30 +39,36 @@ namespace Erato.Model
         public string Cavity { get; set; }
 
         /// <summary>
-        /// 总产量
+        /// 数量
         /// </summary>
-        [Display(Name = "总产量")]
+        [Display(Name = "数量")]
+        [Range(0, 1000)]
         [BsonElement("total")]
         public int Total { get; set; }
+
+        /// <summary>
+        /// 外观后数量
+        /// </summary>
+        /// <remarks>
+        /// 良品数
+        /// </remarks>
+        [Display(Name = "外观后数量")]
+        [Range(0, 1000)]
+        [BsonElement("output")]
+        public int Output { get; set; }
 
         /// <summary>
         /// 不良数
         /// </summary>
         [Display(Name = "不良数")]
+        [Range(0, 1000)]
         [BsonElement("defectiveNum")]
         public int DefectiveNum { get; set; }
 
         /// <summary>
-        /// 良品数
+        /// 外观人员
         /// </summary>
-        [Display(Name = "良品数")]
-        [BsonElement("output")]
-        public int Output { get; set; }
-
-        /// <summary>
-        /// 不良数录入人工号
-        /// </summary>
-        [Display(Name = "不良数录入人工号")]
+        [Display(Name = "外观人员")]
         [BsonElement("defRecoder")]
         public string DefRecoder { get; set; }
 
