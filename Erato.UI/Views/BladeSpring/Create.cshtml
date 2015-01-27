@@ -2,6 +2,14 @@
 
 @{
     ViewBag.Title = "新建批次";
+
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        UpdateTargetId = "rfid-lock-box",
+        Url = Url.Action("InitRfid", "BladeSpring"),
+        HttpMethod = "POST",
+        OnSuccess = "finishRfid()"
+    };
 }
 
 <!-- BEGIN PAGE HEADER-->
@@ -42,8 +50,8 @@
                     </a>
                 </div>
             </div>
-            <div class="portlet-body form">
-                @using (Html.BeginForm("Create", "BladeSpring", FormMethod.Post, new { @class = "form-horizontal" }))
+            <div class="portlet-body form" id="rfid-lock-box">
+                @using (Ajax.BeginForm("InitRfid", new { controller = "BladeSpring" }, ajaxOpts, new { @class = "form-horizontal" }))
                 {
                     @Html.AntiForgeryToken()
                     <div class="form-body">
@@ -59,17 +67,25 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="control-label col-md-3">状态信息</label>
+                                    <label class="control-label col-md-3">绑定LOTNO</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" readonly="readonly">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group">
-                                    <label class="control-label col-md-3">操作信息</label>
+                                    <label class="control-label col-md-3">工序</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" readonly="readonly">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">状态</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" readonly="readonly">
                                     </div>
                                 </div>
                             </div>
@@ -88,9 +104,8 @@
                     <div class="form-actions right">
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" onclick="return ReadIDCard();" class="btn purple-medium" role="button"><i class="fa fa-check"></i>&nbsp;检查</a>
-                                <a href="#" class="btn blue-madison" role="button"><i class="fa fa-clock-o"></i>&nbsp;初始化</a>
-                                <a href="#" class="btn green-haze" role="button"><i class="fa fa-unlock"></i>&nbsp;解锁并初始化</a>
+                                <a href="#" onclick="return ReadIDCard();" class="btn blue-madison" role="button"><i class="fa fa-clock-o"></i>&nbsp;初始化</a>
+                                <button type="submit" class="btn green-haze"><i class="fa fa-unlock"></i>&nbsp;解锁</button>
                             </div>
                         </div>
                     </div>
@@ -240,7 +255,48 @@
                         <h3 class="form-section">线圈</h3>
                         <div class="row">
                             <div class="col-md-4">
-                                
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">LOTNO</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="coil-new" class="btn green">
+                                        添加 <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped table-hover table-bordered" id="coil-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                LOTNO
+                                            </th>
+                                            <th>
+                                                品番
+                                            </th>
+                                            <th>
+                                                腔体
+                                            </th>
+                                            <th>
+                                                数量
+                                            </th>
+                                            <th>
+                                                编辑
+                                            </th>
+                                            <th>
+                                                删除
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
                             </div>
                         </div>
 
@@ -304,6 +360,11 @@
         $(function () {
             erato.topNavActive($('#menu-center'));
             erato.initDatePicker($('#OperationTime'), true);
+            erato.initEditTable($('#coil-table'), $('#coil-new'));
+
+            function finishRfid() {
+                alert('finish');
+            }
         });
     </script>
 }

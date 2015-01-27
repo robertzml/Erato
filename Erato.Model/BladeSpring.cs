@@ -165,9 +165,9 @@ namespace Erato.Model
         public DateTime OperationTime { get; set; }
 
         /// <summary>
-        /// 录入人工号
+        /// 操作员
         /// </summary>
-        [Display(Name = "录入人工号")]
+        [Display(Name = "操作员")]
         [BsonElement("operator")]
         public string Operator { get; set; }
     }

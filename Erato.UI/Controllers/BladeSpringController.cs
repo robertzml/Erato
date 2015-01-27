@@ -189,6 +189,16 @@ namespace Erato.UI.Controllers
                 return RedirectToAction("Delete", new { id = id });
             }
         }
+
+        /// <summary>
+        /// 初始化RFID
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult InitRfid()
+        {
+            return View();
+        }
         #endregion //Action
     }
 }
