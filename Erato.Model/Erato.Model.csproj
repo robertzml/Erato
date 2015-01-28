@@ -50,6 +50,7 @@
     <Compile Include="ACT.cs" />
     <Compile Include="Coil.cs" />
     <Compile Include="CollectionName.cs" />
+    <Compile Include="Component.cs" />
     <Compile Include="DryClean.cs" />
     <Compile Include="ErrorCode.cs" />
     <Compile Include="BladeSpring.cs" />
