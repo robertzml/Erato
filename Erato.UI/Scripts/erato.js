@@ -93,7 +93,153 @@ var erato = function() {
 		return oTable;
 	}
 	
-	var handleInitEditTable = function($dom) {
+	var handleInitEditTable = function($dom, $new) {
+		function restoreRow(oTable, nRow) {
+            var aData = oTable.fnGetData(nRow);
+            var jqTds = $('>td', nRow);
+
+            for (var i = 0, iLen = jqTds.length; i < iLen; i++) {
+                oTable.fnUpdate(aData[i], nRow, i, false);
+            }
+
+            oTable.fnDraw();
+        }
+
+        function editRow(oTable, nRow, colLength) {
+            var aData = oTable.fnGetData(nRow);
+            var jqTds = $('>td', nRow);
+			for(var i = 0; i < colLength; i++) {
+				jqTds[i].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[i] + '">';
+			}           
+            jqTds[colLength - 2].innerHTML = '<a class="edit" href="">保存</a>';
+            jqTds[colLength - 1].innerHTML = '<a class="cancel" href="">取消</a>';
+        }
+
+        function saveRow(oTable, nRow, colLength) {
+            var jqInputs = $('input', nRow);
+			for (var i = 0; i < colLength; i++) {
+				oTable.fnUpdate(jqInputs[i].value, nRow, i, false);
+			}          
+            oTable.fnUpdate('<a class="edit" href="">编辑</a>', nRow, colLength - 2, false);
+            oTable.fnUpdate('<a class="delete" href="">删除</a>', nRow, colLength - 1, false);
+            oTable.fnDraw();
+        }
+
+        function cancelEditRow(oTable, nRow) {
+            var jqInputs = $('input', nRow);
+            oTable.fnUpdate(jqInputs[0].value, nRow, 0, false);
+            oTable.fnUpdate(jqInputs[1].value, nRow, 1, false);
+            oTable.fnUpdate(jqInputs[2].value, nRow, 2, false);
+            oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
+			oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
+            oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 5, false);
+            oTable.fnDraw();
+        }
+
+        var table = $dom;
+
+        var oTable = table.dataTable({
+            "dom": "t",
+
+            "lengthMenu": [
+                [5, 15, 20, -1],
+                [5, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "pageLength": 10,
+
+            "language": {
+                "lengthMenu": " _MENU_ records"
+            },
+
+            "order": [
+                [0, "asc"]
+            ] // set first column as a default sort by asc
+        });
+    
+        var nEditing = null;
+        var nNew = false;
+		var colLength = oTable.api().columns()[0].length;
+		
+        $new.click(function (e) {
+            e.preventDefault();
+
+            if (nNew && nEditing) {
+                if (confirm("Previose row not saved. Do you want to save it ?")) {
+                    saveRow(oTable, nEditing, colLength); // save
+                    $(nEditing).find("td:first").html("Untitled");
+                    nEditing = null;
+                    nNew = false;
+
+                } else {
+                    oTable.fnDeleteRow(nEditing); // cancel
+                    nEditing = null;
+                    nNew = false;
+                    
+                    return;
+                }
+            }
+
+			var emptyRow = new Array(colLength);
+			for (var i = 0; i < emptyRow.length; i++) {
+				emptyRow[i] = '';
+			}
+            var aiNew = oTable.fnAddData(emptyRow);
+            var nRow = oTable.fnGetNodes(aiNew[0]);
+            editRow(oTable, nRow, colLength);
+            nEditing = nRow;
+            nNew = true;
+        });
+
+        table.on('click', '.delete', function (e) {
+            e.preventDefault();
+
+            if (confirm("是否确认删除本行 ?") == false) {
+                return;
+            }
+
+            var nRow = $(this).parents('tr')[0];
+            oTable.fnDeleteRow(nRow);
+            //alert("Deleted! Do not forget to do some ajax to sync with backend :)");
+        });
+
+        table.on('click', '.cancel', function (e) {
+            e.preventDefault();
+            if (nNew) {
+                oTable.fnDeleteRow(nEditing);
+                nEditing = null;
+                nNew = false;
+            } else {
+                restoreRow(oTable, nEditing);
+                nEditing = null;
+            }
+        });
+
+        table.on('click', '.edit', function (e) {
+            e.preventDefault();
+
+            /* Get the row as a parent of the link that was clicked on */
+            var nRow = $(this).parents('tr')[0];
+
+            if (nEditing !== null && nEditing != nRow) {
+                /* Currently editing - but not this row - restore the old before continuing to edit mode */
+                restoreRow(oTable, nEditing);
+                editRow(oTable, nRow, colLength);
+                nEditing = nRow;
+            } else if (nEditing == nRow && this.innerHTML == "Save") {
+                /* Editing this row and want to save it */
+                saveRow(oTable, nEditing, colLength);
+                nEditing = null;
+                alert("Updated! Do not forget to do some ajax to sync with backend :)");
+            } else {
+                /* No edit in progress - let's start one */
+                editRow(oTable, nRow, colLength);
+                nEditing = nRow;
+            }
+        });
+	}
+	
+	var handleInitEditTable2 = function($dom) {
 		function restoreRow(oTable, nRow) {
             var aData = oTable.fnGetData(nRow);
             var jqTds = $('>td', nRow);
@@ -280,8 +426,8 @@ var erato = function() {
 			return handleInitDatatable($dom);
 		},
 		
-		initEditTable: function($dom) {
-			return handleInitEditTable($dom);
+		initEditTable: function($dom, $new) {
+			return handleInitEditTable($dom, $new);
 		},
 
 		initDatePicker: function($dom, today) {

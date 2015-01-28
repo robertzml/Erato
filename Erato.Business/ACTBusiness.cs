@@ -51,6 +51,16 @@ namespace Erato.Business
         }
 
         /// <summary>
+        /// 获取上一批次
+        /// </summary>
+        /// <returns></returns>
+        public ACT GetLast()
+        {
+            var data = this.actRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
+            return data;
+        }
+
+        /// <summary>
         /// 添加ACT
         /// </summary>
         /// <param name="data">ACT对象</param>

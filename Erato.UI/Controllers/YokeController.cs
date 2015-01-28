@@ -66,7 +66,13 @@ namespace Erato.UI.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            Yoke model = new Yoke();
+            model.LotNo = "0";
+            model.Products = "Y";
+            model.Date = DateTime.Now.ShortDate();
+            model.Cavity = "-";
+
+            return View(model);
         }
 
         /// <summary>
@@ -80,6 +86,8 @@ namespace Erato.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                model.LotNo = string.Format("{0}-{1}-{2}-{3}-{4}-{5}-{6}", model.Type, model.Custom, model.Products, model.Line, model.Date, model.Shifts, model.SeqNum);
+
                 ErrorCode result = this.yokeBusiness.Create(model);
                 if (result == ErrorCode.Success)
                 {
