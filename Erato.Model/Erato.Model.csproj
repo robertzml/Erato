@@ -67,6 +67,8 @@
     <Compile Include="UpperSpring.cs" />
     <Compile Include="Magnet.cs" />
     <Compile Include="Pedestal.cs" />
+    <Compile Include="Dept.cs" />
+    <Compile Include="Role.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

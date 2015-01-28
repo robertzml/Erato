@@ -68,6 +68,8 @@
     <Compile Include="UpperSpringRepository.cs" />
     <Compile Include="MagnetRepository.cs" />
     <Compile Include="PedestalRepository.cs" />
+    <Compile Include="DeptRepository.cs" />
+    <Compile Include="RoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Erato.Model\Erato.Model.csproj">

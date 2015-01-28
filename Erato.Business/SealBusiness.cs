@@ -56,6 +56,7 @@ namespace Erato.Business
         /// <returns></returns>
         public Seal GetLast()
         {
+            
             var data = this.sealRepository.Get().OrderByDescending(r => r.OperationTime).FirstOrDefault();
             return data;
         }
