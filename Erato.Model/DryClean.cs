@@ -24,17 +24,17 @@ namespace Erato.Model
         public string LotNo { get; set; }
 
         /// <summary>
-        /// 录入时间
+        /// 操作时间
         /// </summary>
-        [Display(Name = "录入时间")]
+        [Display(Name = "操作时间")]
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         [BsonElement("operationTime")]
         public DateTime OperationTime { get; set; }
 
         /// <summary>
-        /// 录入人工号
+        /// 操作员
         /// </summary>
-        [Display(Name = "录入人工号")]
+        [Display(Name = "操作员")]
         [BsonElement("operator")]
         public string Operator { get; set; }
     }

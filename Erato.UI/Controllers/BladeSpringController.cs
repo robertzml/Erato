@@ -70,7 +70,13 @@ namespace Erato.UI.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            BladeSpring model = new BladeSpring();
+            model.LotNo = "a";
+            model.Products = "S";
+            model.Date = DateTime.Now.ShortDate();
+            model.Cavity = "-";
+
+            return View(model);
         }
 
         /// <summary>
@@ -84,6 +90,8 @@ namespace Erato.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                model.LotNo = string.Format("{0}-{1}-{2}-{3}-{4}-{5}-{6}", model.Type, model.Custom, model.Products, model.Line, model.Date, model.Shifts, model.SeqNum);
+
                 ErrorCode result = this.bladeSpringBusiness.Create(model);
 
                 if (result == ErrorCode.Success)
@@ -98,7 +106,7 @@ namespace Erato.UI.Controllers
                 }
             }
 
-            return View();
+            return View(model);
         }
 
         /// <summary>
@@ -180,6 +188,16 @@ namespace Erato.UI.Controllers
                 TempData["Message"] = "删除板弹簧失败";
                 return RedirectToAction("Delete", new { id = id });
             }
+        }
+
+        /// <summary>
+        /// 初始化RFID
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult InitRfid()
+        {
+            return View();
         }
         #endregion //Action
     }

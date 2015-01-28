@@ -31,6 +31,7 @@ namespace Erato.Model
         [Required]
         [Display(Name = "品番")]
         [StringLength(12, MinimumLength = 12, ErrorMessage = "输入的品番必须为12位！")]
+        [RegularExpressionAttribute(@"\b2AE-00082\w{3}\b", ErrorMessage = "输入的品番必须以2AE-00082打头,并且输入总长度为12位！")]
         public string ProductNo { get; set; }
 
         /// <summary>
@@ -43,13 +44,22 @@ namespace Erato.Model
         public string Cavity { get; set; }
 
         /// <summary>
-        /// 数量
+        /// 总量
         /// </summary>
         [Required]
-        [Display(Name = "数量")]
+        [Display(Name = "总量")]
         [BsonElement("quantity")]
         [Range(0, Int32.MaxValue)]
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// 使用量
+        /// </summary>
+        [Required]
+        [Display(Name = "使用量")]
+        [BsonElement("usedqty")]
+        [Range(0, Int32.MaxValue)]
+        public int UsedQty { get; set; }
 
         /// <summary>
         /// 录入时间

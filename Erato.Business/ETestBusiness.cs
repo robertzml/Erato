@@ -51,7 +51,7 @@ namespace Erato.Business
         }
 
         /// <summary>
-        /// 获取上一批次
+        /// 获取前一批次
         /// </summary>
         /// <returns></returns>
         public ETest GetLast()

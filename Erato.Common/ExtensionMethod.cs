@@ -34,5 +34,16 @@ namespace Erato.Common
 
             return outString;
         }
+
+        /// <summary>
+        /// 短日期格式
+        /// </summary>
+        /// <param name="date">日期</param>
+        /// <returns>返回值如：150125</returns>
+        public static string ShortDate(this DateTime date)
+        {
+            string s = string.Format("{0}{1}{2}", date.Year % 2000, date.Month.ToString().PadLeft(2, '0'), date.Day.ToString().PadLeft(2, '0'));
+            return s;
+        }
     }
 }

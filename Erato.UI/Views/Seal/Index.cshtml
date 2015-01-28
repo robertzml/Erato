@@ -18,7 +18,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">封止工序</a>
+            <a href="@Url.Action("Index", "Seal")">封止工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -61,6 +61,8 @@
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config">
                     </a>
                     <a href="javascript:;" class="reload">
                     </a>
@@ -116,7 +118,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-4">外观后数量:</label>
                                         <div class="col-md-8">
-                                            <input type="text" readonly="readonly" class="form-control" value="@last.LotNo" />
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Output" />
                                         </div>
                                     </div>
                                 </div>
@@ -229,7 +231,10 @@
                                 @Html.DisplayNameFor(model => model.DefRecoder)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Stat)
+                                @Html.DisplayNameFor(model => model.Operator)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OperationTime)
                             </th>
                             <th>操作</th>
                         </tr>
@@ -259,9 +264,12 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.DefRecoder)
                                 </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Stat)
-                                </td>
+                                <th>
+                                    @Html.DisplayFor(modelItem => item.Operator)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(modelItem => item.OperationTime)
+                                </th>
                                 <td>
                                     <a href="@Url.Action("Details", new { controller = "Seal", id = item._id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>
                                     <a href="@Url.Action("Edit", new { controller = "Seal", id = item._id })" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i>&nbsp;编辑</a>

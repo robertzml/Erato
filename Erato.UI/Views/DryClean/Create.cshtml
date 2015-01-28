@@ -1,7 +1,7 @@
 ﻿@model Erato.Model.DryClean
 
 @{
-    ViewBag.Title = "新建批次";
+    ViewBag.Title = "打翻锁定";
 }
 
 
@@ -17,7 +17,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">洗净干燥工序</a>
+            <a href="@Url.Action("Index", "DryClean")">洗净干燥工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -32,7 +32,7 @@
         <div class="portlet box blue">                
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-header"></i>新建批次
+                    <i class="fa fa-header"></i>@ViewBag.Title
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -49,6 +49,23 @@
                     @Html.AntiForgeryToken()
                     <div class="form-body">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <h3 class="form-section">打翻锁定</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">RFID</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                                <button class="btn blue" type="button">读卡</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <h3 class="form-section">洗净干燥信息</h3>
                         <div class="row">
                             <div class="col-md-4">

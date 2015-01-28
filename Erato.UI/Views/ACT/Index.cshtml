@@ -17,7 +17,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">ACT组立工序</a>
+            <a href="@Url.Action("Index", "ACT")">ACT组立工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -60,6 +60,8 @@
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config">
                     </a>
                     <a href="javascript:;" class="reload">
                     </a>
@@ -115,7 +117,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-4">外观后数量:</label>
                                         <div class="col-md-8">
-                                            <input type="text" readonly="readonly" class="form-control" value="@last.LotNo" />
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Output" />
                                         </div>
                                     </div>
                                 </div>
@@ -208,27 +210,6 @@
                                 @Html.DisplayNameFor(model => model.LotNo)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Type)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Custom)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Products)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Line)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Date)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Shifts)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.SeqNum)
-                            </th>
-                            <th>
                                 @Html.DisplayNameFor(model => model.MetalType)
                             </th>
                             <th>
@@ -236,6 +217,21 @@
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Total)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Output)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DefectiveNum)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Products)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Operator)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OperationTime)
                             </th>
                             <th>操作</th>
                         </tr>
@@ -248,27 +244,6 @@
                                     @Html.DisplayFor(modelItem => item.LotNo)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Type)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Custom)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Products)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Line)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Date)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Shifts)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.SeqNum)
-                                </td>
-                                <td>
                                     @Html.DisplayFor(modelItem => item.MetalType)
                                 </td>
                                 <td>
@@ -276,6 +251,21 @@
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Total)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Output)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DefectiveNum)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Products)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Operator)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OperationTime)
                                 </td>
                                 <td>
                                     <a href="@Url.Action("Details", new { controller = "ACT", id = item._id })" class="btn btn-info btn-sm" role="button"><i class="fa fa-check-circle"></i>&nbsp;查看</a>

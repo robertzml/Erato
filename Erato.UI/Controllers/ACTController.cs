@@ -39,6 +39,7 @@ namespace Erato.UI.Controllers
         public ActionResult Index()
         {
             var data = this.actBusiness.Get();
+
             ViewBag.Last = this.actBusiness.GetLast();
 
             return View(data);
@@ -65,7 +66,13 @@ namespace Erato.UI.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            ACT model = new ACT();
+            model.LotNo = "0";
+            model.Products = "A";
+            model.Date = DateTime.Now.ShortDate();
+            model.Cavity = "-";
+
+            return View(model);
         }
 
         /// <summary>
@@ -79,6 +86,8 @@ namespace Erato.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                model.LotNo = string.Format("{0}-{1}-{2}-{3}-{4}-{5}-{6}", model.Type, model.Custom, model.Products, model.Line, model.Date, model.Shifts, model.SeqNum);
+
                 ErrorCode result = this.actBusiness.Create(model);
                 if (result == ErrorCode.Success)
                 {

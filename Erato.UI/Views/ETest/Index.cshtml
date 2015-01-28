@@ -17,7 +17,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">电检工序</a>
+            <a href="@Url.Action("Index", "ETest")">电检工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -60,6 +60,8 @@
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config">
                     </a>
                     <a href="javascript:;" class="reload">
                     </a>
@@ -115,7 +117,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-4">外观后数量:</label>
                                         <div class="col-md-8">
-                                            <input type="text" readonly="readonly" class="form-control" value="@last.LotNo" />
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Output" />
                                         </div>
                                     </div>
                                 </div>

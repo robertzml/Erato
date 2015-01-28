@@ -39,6 +39,7 @@ namespace Erato.UI.Controllers
         public ActionResult Index()
         {
             var data = this.etestBusiness.Get();
+
             ViewBag.Last = this.etestBusiness.GetLast();
 
             return View(data);
@@ -65,7 +66,10 @@ namespace Erato.UI.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            ETest model = new ETest();
+            model.Cavity = "-";
+
+            return View(model);
         }
 
         /// <summary>

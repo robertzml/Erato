@@ -17,7 +17,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#">磁轭工序</a>
+            <a href="@Url.Action("Index", "Yoke")">磁轭工序</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
@@ -115,7 +115,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-4">外观后数量:</label>
                                         <div class="col-md-8">
-                                            <input type="text" readonly="readonly" class="form-control" value="@last.LotNo" />
+                                            <input type="text" readonly="readonly" class="form-control" value="@last.Output" />
                                         </div>
                                     </div>
                                 </div>
@@ -124,14 +124,6 @@
                                         <label class="control-label col-md-4">不良数:</label>
                                         <div class="col-md-8">
                                             <input type="text" readonly="readonly" class="form-control" value="@last.DefectiveNum" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-4">良品数:</label>
-                                        <div class="col-md-8">
-                                            <input type="text" readonly="readonly" class="form-control" value="@last.Output" />
                                         </div>
                                     </div>
                                 </div>
@@ -219,6 +211,12 @@
                                 @Html.DisplayNameFor(model => model.Total)
                             </th>
                             <th>
+                                @Html.DisplayNameFor(model => model.Output)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DefectiveNum)
+                            </th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.Operator)
                             </th>
                             <th>
@@ -242,6 +240,12 @@
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Total)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Output)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DefectiveNum)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Operator)
