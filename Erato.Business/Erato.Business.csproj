@@ -55,6 +55,8 @@
     <Compile Include="UpperSpringBusiness.cs" />
     <Compile Include="MagnetBusiness.cs" />
     <Compile Include="PedestalBusiness.cs" />
+    <Compile Include="DeptBusiness.cs" />
+    <Compile Include="RoleBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Erato.Common\Erato.Common.csproj">

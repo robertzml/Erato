@@ -31,6 +31,17 @@ namespace Erato.Data
         #endregion //Constructor
 
         #region Method
+
+        /// <summary>
+        /// 获取所有用户
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<User> Get()
+        {
+            return this.repository.AsEnumerable();
+        }
+
+
         /// <summary>
         /// 获取用户
         /// </summary>
@@ -43,6 +54,59 @@ namespace Erato.Data
                 return null;
             else
                 return data.First();
+        }
+
+        /// <summary>
+        /// 删除用户
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ErrorCode Delete(string id)
+        {
+            try
+            {
+                this.repository.Delete(id);
+            }
+            catch (Exception)
+            {
+                return ErrorCode.Exception;
+            }
+
+            return ErrorCode.Success;
+        }
+
+        /// <summary>
+        /// 编辑用户
+        /// </summary>
+        /// <param name="data">用户数据</param>
+        /// <returns></returns>
+        public ErrorCode Update(User data)
+        {
+            try
+            {
+                this.repository.Update(data);
+            }
+            catch (Exception)
+            {
+                return ErrorCode.Exception;
+            }
+
+            return ErrorCode.Success;
+        }
+
+        public bool UserNameExists(string name)
+        {
+            return this.repository.Exists(n => n.UserName == name);
+        }
+
+        /// <summary>
+        /// 获取用户
+        /// </summary>
+        /// <param name="id">ID</param>
+        /// <returns></returns>
+        public User Get(string id)
+        {
+            return this.repository.GetById(id);
         }
 
         /// <summary>

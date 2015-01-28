@@ -27,9 +27,58 @@ namespace Erato.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 用户类别ID
+        /// 角色编号
         /// </summary>
-        [BsonElement("userTypeId")]
-        public int UserTypeId { get; set; }
+        [BsonElement("roleNo")]
+        [Display(Name = "角色编号")]
+        [Required]
+        public string RoleNo { get; set; }
+
+        /// <summary>
+        /// 性别
+        /// </summary>
+        [BsonElement("sex")]
+        [Display(Name = "性别")]
+        [Required]
+        public bool Sex { get; set; }
+
+        /// <summary>
+        /// 员工工号
+        /// </summary>
+        [BsonElement("empNo")]
+        [Display(Name = "员工工号")]
+        [Required]
+        public string EmpNo { get; set; }
+
+        /// <summary>
+        /// 员工姓名
+        /// </summary>
+        [BsonElement("empName")]
+        [Display(Name = "员工姓名")]
+        [Required]
+        public string EmpName { get; set; }
+
+        /// <summary>
+        /// 部门编号
+        /// </summary>
+        [BsonElement("deptNo")]
+        [Display(Name = "部门编号")]
+        [Required]
+        public string DeptNo { get; set; }
+
+        /// <summary>
+        /// 录入时间
+        /// </summary>
+        [Display(Name = "录入时间")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        [BsonElement("operationTime")]
+        public DateTime OperationTime { get; set; }
+
+        /// <summary>
+        /// 录入人工号
+        /// </summary>
+        [Display(Name = "录入人工号")]
+        [BsonElement("operator")]
+        public string Operator { get; set; }
     }
 }

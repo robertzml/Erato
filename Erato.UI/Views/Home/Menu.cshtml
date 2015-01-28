@@ -269,9 +269,40 @@
             </a>
         </li>
         <li class="classic-menu-dropdown">
-            <a href="#">
-                系统设置
+            <a data-toggle="dropdown" href="javascript:;" id="menu-center1">
+                系统设置 <i class="fa fa-angle-down"></i>
             </a>
+            <ul class="dropdown-menu pull-left">
+                <li class="dropdown-submenu">
+                    <a href="javascript:;">
+                        <i class="fa fa-sitemap"></i> 基本资料
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="@Url.Action("Index", "Dept")">
+                                部门资料
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a href="javascript:;">
+                        <i class="fa fa-user"></i> 用户权限
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="@Url.Action("Index", "Role")">
+                                角色权限
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "User")">
+                                用户管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>
