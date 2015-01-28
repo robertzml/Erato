@@ -127,6 +127,7 @@
     <Compile Include="Controllers\PedestalController.cs" />
     <Compile Include="Controllers\DeptController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\EnhancedAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -321,7 +322,6 @@
     <Content Include="Views\Pedestal\Details.cshtml" />
     <Content Include="Views\Pedestal\Edit.cshtml" />
     <Content Include="Views\Pedestal\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Dept\Create.cshtml" />
     <Content Include="Views\Dept\Delete.cshtml" />
     <Content Include="Views\Dept\Details.cshtml" />
@@ -332,9 +332,12 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
-=======
     <Content Include="Views\BladeSpring\InitRfid.cshtml" />
->>>>>>> 2cff13c37612ffd34b1d361e41606d0e6983a1d3
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
