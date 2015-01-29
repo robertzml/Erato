@@ -108,7 +108,7 @@ namespace Erato.Model
         /// </summary>
         [Display(Name = "线圈部材")]
         [BsonElement("coils")]
-        public string Coils { get; set; }
+        public List<Component> Coils { get; set; }
 
         /// <summary>
         /// 下板弹簧部材

@@ -258,7 +258,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-3">LOTNO</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="coil-lotno">
                                     </div>
                                 </div>
                             </div>
@@ -285,10 +285,10 @@
                                                 腔体
                                             </th>
                                             <th>
-                                                数量
+                                                剩余
                                             </th>
                                             <th>
-                                                编辑
+                                                数量
                                             </th>
                                             <th>
                                                 删除
@@ -360,11 +360,35 @@
         $(function () {
             erato.topNavActive($('#menu-center'));
             erato.initDatePicker($('#OperationTime'), true);
-            erato.initEditTable($('#coil-table'), $('#coil-new'));
 
             function finishRfid() {
                 alert('finish');
             }
+
+            $('button#coil-new').click(function (e) {
+                e.preventDefault();
+
+                var lotNo = $('#coil-lotno').val();
+
+                $.getJSON('/BladeSpring/GetCoil', { lotNo: lotNo }, function (response) {
+
+                    var tr = $('<tr/>')
+                        .append("<td><input type='text' name='coilLotNo[]' class='form-control input-small' readonly='readonly' value='" + response.LotNo  + "'></td>")
+                        .append("<td>" + response.ProductNo + "</td>")
+                        .append("<td>" + response.Cavity + "</td>")
+                        .append("<td>" + response.Total + "</td>")
+                        .append("<td><input type='number' name='coilNumber[]' class='form-control input-small' ></td>")
+                        .append("<td><a href='' class='btn btn-sm btn-warning com-delete' role='button'>删除</a></td>");
+
+                    $('table#coil-table tbody').append(tr);
+
+                    $('a.com-delete').click(function (e) {
+                        e.preventDefault();
+                        $(this).parent().parent().remove();
+                    });
+                });
+            });
+
         });
     </script>
 }

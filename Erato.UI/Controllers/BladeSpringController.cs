@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using Erato.Business;
@@ -91,6 +92,19 @@ namespace Erato.UI.Controllers
             if (ModelState.IsValid)
             {
                 model.LotNo = string.Format("{0}-{1}-{2}-{3}-{4}-{5}-{6}", model.Type, model.Custom, model.Products, model.Line, model.Date, model.Shifts, model.SeqNum);
+
+                string[] coilLotNos = Regex.Split(Request.Form["coilLotNo[]"], ",");
+                string[] coilNumbers = Regex.Split(Request.Form["coilNumber[]"], ",");
+
+                model.Coils = new List<Component>();
+                for (int i = 0; i < coilLotNos.Length; i++)
+                {
+                    model.Coils.Add(new Component
+                    {
+                        LotNo = coilLotNos[i],
+                        Numbert = Convert.ToInt32(coilNumbers[i])
+                    });
+                }
 
                 ErrorCode result = this.bladeSpringBusiness.Create(model);
 
@@ -198,7 +212,27 @@ namespace Erato.UI.Controllers
         public ActionResult InitRfid()
         {
             return View();
-        }
+        }       
         #endregion //Action
+
+        #region Json
+        /// <summary>
+        /// 获取线圈
+        /// </summary>
+        /// <param name="lotNo"></param>
+        /// <returns></returns>
+        public JsonResult GetCoil(string lotNo)
+        {
+            var coil = new
+            {
+                LotNo = lotNo,
+                ProductNo = "12ABDE-ADS",
+                Cavity = "1A",
+                Total = 1000
+            };
+
+            return Json(coil, JsonRequestBehavior.AllowGet);
+        }
+        #endregion //Json
     }
 }
