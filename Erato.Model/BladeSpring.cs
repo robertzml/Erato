@@ -115,7 +115,7 @@ namespace Erato.Model
         /// </summary>
         [Display(Name = "下板弹簧部材")]
         [BsonElement("dsprings")]
-        public string DSprings { get; set; }
+        public List<Component> DSprings { get; set; }
 
         /// <summary>
         /// 不良数

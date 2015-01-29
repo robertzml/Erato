@@ -106,6 +106,19 @@ namespace Erato.UI.Controllers
                     });
                 }
 
+                string[] dspringLotNos = Regex.Split(Request.Form["dspringLotNo[]"], ",");
+                string[] dspringNumbers = Regex.Split(Request.Form["dspringNumber[]"], ",");
+
+                model.DSprings = new List<Component>();
+                for (int i = 0; i < dspringLotNos.Length; i++)
+                {
+                    model.DSprings.Add(new Component
+                    {
+                        LotNo = dspringLotNos[i],
+                        Numbert = Convert.ToInt32(dspringNumbers[i])
+                    });
+                }
+
                 ErrorCode result = this.bladeSpringBusiness.Create(model);
 
                 if (result == ErrorCode.Success)
@@ -232,6 +245,23 @@ namespace Erato.UI.Controllers
             };
 
             return Json(coil, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 获取下板弹簧
+        /// </summary>
+        /// <param name="lotNo"></param>
+        /// <returns></returns>
+        public JsonResult GetDSpring(string lotNo)
+        {
+            var dspring = new
+            {
+                LotNo = lotNo,
+                ProductNo = "798ABDE-ADS",
+                Total = 1000
+            };
+
+            return Json(dspring, JsonRequestBehavior.AllowGet);
         }
         #endregion //Json
     }

@@ -128,7 +128,6 @@
     <Compile Include="Controllers\PedestalController.cs" />
     <Compile Include="Controllers\DeptController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\EnhancedAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
