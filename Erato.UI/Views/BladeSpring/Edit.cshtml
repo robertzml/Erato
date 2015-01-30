@@ -176,12 +176,59 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Coils, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <label class="control-label col-md-3">LOTNO</label>
                                 <div class="col-md-9">
-                                    @Html.EditorFor(model => model.Coils, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Coils, "", new { @class = "text-danger help-block" })
+                                    <input type="text" class="form-control" id="coil-lotno">
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="btn-group">
+                                <button id="coil-new" class="btn green">
+                                    添加 <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped table-hover table-bordered" id="coil-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            LOTNO
+                                        </th>
+                                        <th>
+                                            品番
+                                        </th>
+                                        <th>
+                                            腔体
+                                        </th>
+                                        <th>
+                                            剩余
+                                        </th>
+                                        <th>
+                                            数量
+                                        </th>
+                                        <th>
+                                            删除
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(var item in Model.Coils)
+                                    {
+                                        <tr>
+                                            <td>@item.LotNo</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>@item.Numbert</td>
+                                            <td><a href='#' class='btn btn-sm btn-warning com-delete' role='button'>删除</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

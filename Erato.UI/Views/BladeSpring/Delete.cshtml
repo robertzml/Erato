@@ -140,22 +140,44 @@
                                 @Html.DisplayFor(model => model.Total)
                             </td>
                         </tr>
+                        @foreach (var coil in Model.Coils)
+                        {
                         <tr>
                             <td>
-                                @Html.DisplayNameFor(model => model.Coils)
+                                线圈部材LOTNO
                             </td>
                             <td>
-                                @Html.DisplayFor(model => model.Coils)
+                                @coil.LotNo
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                @Html.DisplayNameFor(model => model.DSprings)
+                                线圈部材数量
                             </td>
                             <td>
-                                @Html.DisplayFor(model => model.DSprings)
+                                @coil.Numbert
                             </td>
                         </tr>
+                        }
+                        @foreach (var dspring in Model.DSprings)
+                        {
+                            <tr>
+                                <td>
+                                    下板弹簧部材LOTNO
+                                </td>
+                                <td>
+                                    @dspring.LotNo
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    下板弹簧部材数量
+                                </td>
+                                <td>
+                                    @dspring.Numbert
+                                </td>
+                            </tr>
+                        }
                         <tr>
                             <td>
                                 @Html.DisplayNameFor(model => model.DefectiveNum)

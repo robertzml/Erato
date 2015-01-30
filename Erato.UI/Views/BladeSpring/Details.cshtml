@@ -139,22 +139,44 @@
                                 @Html.DisplayFor(model => model.Total)
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                @Html.DisplayNameFor(model => model.Coils)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Coils)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                @Html.DisplayNameFor(model => model.DSprings)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.DSprings)
-                            </td>
-                        </tr>
+                        @foreach (var coil in Model.Coils)
+                        {
+                            <tr>
+                                <td>
+                                    线圈部材LOTNO
+                                </td>
+                                <td>
+                                    @coil.LotNo
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    线圈部材数量
+                                </td>
+                                <td>
+                                    @coil.Numbert
+                                </td>
+                            </tr>
+                        }
+                        @foreach(var dspring in Model.DSprings)
+                        {
+                            <tr>
+                                <td>
+                                    下板弹簧部材LOTNO
+                                </td>
+                                <td>
+                                    @dspring.LotNo
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    下板弹簧部材数量
+                                </td>
+                                <td>
+                                    @dspring.Numbert
+                                </td>
+                            </tr>
+                        }
                         <tr>
                             <td>
                                 @Html.DisplayNameFor(model => model.DefectiveNum)
